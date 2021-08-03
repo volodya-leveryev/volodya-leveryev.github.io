@@ -1,0 +1,4 @@
+domain: "volodya-leveryev.github.io"
+baseurl: ""
+url: "https://volodya-leveryev.github.io"
+destination: "./docs"
