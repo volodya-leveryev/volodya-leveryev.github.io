@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Home page
+title: Учебные материалы
 ---
 
-# Hello World
+# 2021-2022 учебный год
 
-This is a home page.
+* Администрирование ОС Linux
