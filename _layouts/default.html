@@ -20,6 +20,9 @@
 					{% for doc in site.windows %}
 					<a class="nav-link" href="{{ doc.url }}">{{ doc.title }}</a>
 					{% endfor %}
+					{% for doc in site.msa %}
+					<a class="nav-link" href="{{ doc.url }}">{{ doc.title }}</a>
+					{% endfor %}
 				</nav>
 			</div>
 			<div class="col-10">
