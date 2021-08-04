@@ -9,3 +9,5 @@ collections:
     output: true
   msa:
     output: true
+  patterns:
+    output: true
