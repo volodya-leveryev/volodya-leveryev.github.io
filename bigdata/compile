@@ -1,0 +1,3 @@
+#!/bin/bash
+rst2pdf -s styles.yml intro.rst -o intro.pdf
+rst2pdf -s styles.yml links.rst -o links.pdf
