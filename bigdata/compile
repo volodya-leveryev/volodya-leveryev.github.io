@@ -1,4 +1,5 @@
 #!/bin/bash
-rst2pdf -s ../styles.yml intro.rst -o intro.pdf
-rst2pdf -s ../styles.yml links.rst -o links.pdf
-rst2pdf -s ../styles.yml hw_create_cluster.rst -o hw_create_cluster.pdf
+rst2pdf -s ../styles.yml ln01_intro.rst
+rst2pdf -s ../styles.yml ln02_hive.rst
+rst2pdf -s ../styles.yml hw01_create_cluster.rst
+rst2pdf -s ../styles.yml links.rst
