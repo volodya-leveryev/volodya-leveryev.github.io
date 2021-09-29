@@ -1,7 +1,9 @@
 # Compiled output
-_build/
 docs/
 *.pdf
 
 # IDE settings
 /.vscode/
+
+# Libraries
+/venv/
