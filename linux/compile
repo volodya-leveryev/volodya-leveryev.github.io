@@ -1,5 +1,4 @@
 #!/bin/bash
-rst2pdf -s ../styles.yml exam.rst -o exam.pdf
 rst2pdf -s ../styles.yml lecture-00.rst -o lecture-00.pdf
 rst2pdf -s ../styles.yml lecture-02.rst -o lecture-02.pdf
 rst2pdf -s ../styles.yml practice-01.rst -o practice-01.pdf
