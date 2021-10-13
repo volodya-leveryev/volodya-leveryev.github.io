@@ -6,4 +6,4 @@ all: $(patsubst %.md,%.html,$(SRCS))
 	cmark $< -t html > $@
 
 clean:
-	rm *.html
+	rm *.html *.pdf

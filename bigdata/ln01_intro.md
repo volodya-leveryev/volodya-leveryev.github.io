@@ -1,8 +1,6 @@
-Введение
-========
+# Введение
 
-Постановка проблемы
--------------------
+## Постановка проблемы
 
 С чего все началось: Google нужно было индексировать данные для поиска по веб-страницам.
 
@@ -23,8 +21,8 @@
 * Хранение данных перед обработкой
 
   - Файлы — неудобно хранить метаданные, возможны проблемы с надежностью хранения, возможны проблемы со скоростью доступа
-  - Реляционные СУБД (`принципы ACID <https://ru.wikipedia.org/wiki/ACID>`_) — записывают данные медленнее чем неряционные СУБД, масштабируются хуже чем нереляционные СУБД
-  - Нереляционные СУБД (`принципы BASE <https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_CAP>`_) — возможны проблемы с согласованностью данных
+  - Реляционные СУБД ([принципы ACID](https://ru.wikipedia.org/wiki/ACID)) — записывают данные медленнее чем неряционные СУБД, масштабируются хуже чем нереляционные СУБД
+  - Нереляционные СУБД ([принципы BASE](https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_CAP)) — возможны проблемы с согласованностью данных
 
 * Обработка данных
 
@@ -32,8 +30,7 @@
   - системы построенные поверх MapReduce (например реализуют SQL-подобные запросы к данным)
   - обработка данных с помощью функций типа ETL (Extract, Transform, Load) 
 
-Apache Hadoop
--------------
+## Apache Hadoop
 
 Hadoop — первая платформа для работы с большими данными.
 
@@ -60,38 +57,36 @@ Hadoop был создан в Google, а затем передан для дал
 * Scala — функциональный язык программирования работающий поверх JVM
 * Python — универсальный "клей" — скриптовый язык высокого уровня, который хорошо интегрируется с компонентами, написанными другими на других языках программирования
 
-Развитие Hadoop
----------------
+## Развитие Hadoop
 
 В процессе развития платформы Hadoop было создано большое количество высокоуровневых средств образующих своего рода экосистему:
 
-* `Apache Hive <https://hive.apache.org/>`_ — средство выполнения SQL-подобных запросов к данным
-* `Cloudera Impala <https://www.cloudera.com/products/open-source/apache-hadoop/impala.html>`_ — средство выполнения SQL-подобных запросов к данным
-* `Apache Pig <https://pig.apache.org/>`_ — высокоуровневый скриптовый язык для обработки данных
-* `Apache Mahout <https://mahout.apache.org/>`_ — Machine Learning поверх MapReduce
-* `Apache Sqoop <https://sqoop.apache.org/>`_ — импорт-экспорт данных из / в базы данных
-* `Apache Kafka <https://kafka.apache.org/>`_ — потоковая обработка данных
-* `Apache Flume <https://flume.apache.org/>`_ — средство для сбора и обработки логов
-* `Apache Zookeeper <https://zookeeper.apache.org/>`_ — средство координации работы узлов
-* `Apache Oozie <https://oozie.apache.org/>`_ — этапы заданий (workflow) и очередь заданий (schedule)
-* `Apache Ambari <https://ambari.apache.org/>`_ — веб-интерфейс для управления и мониторинга
-* `Cloudera Hue <https://www.cloudera.com/products/open-source/apache-hadoop/hue.html>`_ — веб-интерфейс для работы с Hadoop
-* `Apache HBase <https://hbase.apache.org/>`_ — средство доступа к данным в виде widecolumn NoSQL БД
+* [Apache Hive](https://hive.apache.org/) — средство выполнения SQL-подобных запросов к данным
+* [Cloudera Impala](https://www.cloudera.com/products/open-source/apache-hadoop/impala.html) — средство выполнения SQL-подобных запросов к данным
+* [Apache Pig](https://pig.apache.org/) — высокоуровневый скриптовый язык для обработки данных
+* [Apache Mahout](https://mahout.apache.org/) — Machine Learning поверх MapReduce
+* [Apache Sqoop](https://sqoop.apache.org/) — импорт-экспорт данных из / в базы данных
+* [Apache Kafka](https://kafka.apache.org/) — потоковая обработка данных
+* [Apache Flume](https://flume.apache.org/) — средство для сбора и обработки логов
+* [Apache Zookeeper](https://zookeeper.apache.org/) — средство координации работы узлов
+* [Apache Oozie](https://oozie.apache.org/) — этапы заданий (workflow) и очередь заданий (schedule)
+* [Apache Ambari](https://ambari.apache.org/) — веб-интерфейс для управления и мониторинга
+* [Cloudera Hue](https://www.cloudera.com/products/open-source/apache-hadoop/hue.html) — веб-интерфейс для работы с Hadoop
+* [Apache HBase](https://hbase.apache.org/) — средство доступа к данным в виде widecolumn NoSQL БД
 * и другие
 
-`Apache Spark <https://spark.apache.org/>`_ — платформа вычислений, которая работает в кластере Hadoop и ускоряет вычисления MapReduce благодаря тому, что хранит данные промежуточных результатов вычислений в ОЗУ узлов, а не в HDFS.
+[Apache Spark](https://spark.apache.org/) — платформа вычислений, которая работает в кластере Hadoop и ускоряет вычисления MapReduce благодаря тому, что хранит данные промежуточных результатов вычислений в ОЗУ узлов, а не в HDFS.
 
-Платформа Spark также может работать в контейнерах под управлением `Kubernetes <https://kubernetes.io/>`_ и на кластерах `Apache Mesos <http://mesos.apache.org/>`_. Кроме того, Spark может управлять кластером самостоятельно.
+Платформа Spark также может работать в контейнерах под управлением [Kubernetes](https://kubernetes.io/) и на кластерах [Apache Mesos](http://mesos.apache.org/). Кроме того, Spark может управлять кластером самостоятельно.
 
 На базе Spark работают несколько высокоуровневых программных средств:
 
-* `Spark SQL <https://spark.apache.org/sql/>`_ — средство выполнения SQL-подобных запросов к данным
-* `Spark Streaming <https://spark.apache.org/streaming/>`_ — средство потоковой обработки данных
-* `MLlib <https://spark.apache.org/mllib/>`_ — средство для машинного обучения
-* `GraphX <https://spark.apache.org/graphx/>`_ — средство для вычислений на графах
+* [Spark SQL](https://spark.apache.org/sql/) — средство выполнения SQL-подобных запросов к данным
+* [Spark Streaming](https://spark.apache.org/streaming/) — средство потоковой обработки данных
+* [MLlib](https://spark.apache.org/mllib/) — средство для машинного обучения
+* [GraphX](https://spark.apache.org/graphx/) — средство для вычислений на графах
 
-Современные тренды
-------------------
+## Современные тренды
 
 Современные тренды:
 
@@ -101,37 +96,30 @@ Hadoop был создан в Google, а затем передан для дал
 Облачные решения:
 
 * AWS
-
-  - `AWS Redshift <https://aws.amazon.com/redshift/>`_ — хранилище данных
-  - `AWS Athena <https://aws.amazon.com/athena/>`_ — SQL запросы к данным в AWS S3
-  - `AWS Elastic MapReduce (EMR) <https://aws.amazon.com/emr/>`_ — Apache Spark / Hadoop
-  - `AWS Kinesis <https://aws.amazon.com/kinesis/>`_ — потоковая обработка данных
-
+  - [AWS Redshift](https://aws.amazon.com/redshift/) — хранилище данных
+  - [AWS Athena](https://aws.amazon.com/athena/) — SQL запросы к данным в AWS S3
+  - [AWS Elastic MapReduce (EMR)](https://aws.amazon.com/emr/) — Apache Spark / Hadoop
+  - [AWS Kinesis](https://aws.amazon.com/kinesis/) — потоковая обработка данных
 * Microsoft Azure
-
-  - `Microsoft Azure Storage <https://azure.microsoft.com/en-us/services/storage/>`_ — хранилище данных
-  - `Microsoft Azure HDInsight <https://azure.microsoft.com/en-us/services/hdinsight/>`_ — Apache Spark / Hadoop
-  - `Microsoft Azure Event Hub <https://azure.microsoft.com/en-us/services/event-hubs/>`_ — потоковая обработка данных
-
+  - [Microsoft Azure Storage](https://azure.microsoft.com/en-us/services/storage/) — хранилище данных
+  - [Microsoft Azure HDInsight](https://azure.microsoft.com/en-us/services/hdinsight/) — Apache Spark / Hadoop
+  - [Microsoft Azure Event Hub](https://azure.microsoft.com/en-us/services/event-hubs/) — потоковая обработка данных
 * Google Cloud Platform
-
-  - `Google Cloud BigQuery <https://cloud.google.com/bigquery>`_ — хранилище данных
-  - `Google Cloud Dataproc <https://cloud.google.com/dataproc>`_ — Apache Spark / Hadoop
-  - `Google Cloud Dataflow <https://cloud.google.com/dataflow>`_ — потоковая обработка данных 
-
+  - [Google Cloud BigQuery](https://cloud.google.com/bigquery) — хранилище данных
+  - [Google Cloud Dataproc](https://cloud.google.com/dataproc) — Apache Spark / Hadoop
+  - [Google Cloud Dataflow](https://cloud.google.com/dataflow) — потоковая обработка данных 
 * IBM
 * Ali Baba
 * Yandex
 * другие
 
-ElasticStack
-------------
+## ElasticStack
 
 Компоненты:
 
-* `ElasticSearch <https://ru.wikipedia.org/wiki/Elasticsearch>`_ — распределенная поисковая система
+* [ElasticSearch](https://ru.wikipedia.org/wiki/Elasticsearch) — распределенная поисковая система
 * Logstash — система сбора и обработки логов
-* `Kibana <https://ru.wikipedia.org/wiki/Kibana>`_ — платформа аналитики и визуализации
+* [Kibana](https://ru.wikipedia.org/wiki/Kibana) — платформа аналитики и визуализации
 * Beats — коллекция легковесных средств экспорта данных
 
 Часть программных компонентов имеет открытый исходный код.
