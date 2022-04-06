@@ -1,4 +1,5 @@
 # Compiled output
+output/
 docs/
 *.html
 *.pdf
