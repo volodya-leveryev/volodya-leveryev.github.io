@@ -117,7 +117,6 @@ PowerShell в отличие от Cmd, Bash и других оболочек о�
 Однострочный комментарий
 
 ```powershell
-
   <#
     Многострочный комментарий
   #>
@@ -126,7 +125,6 @@ PowerShell в отличие от Cmd, Bash и других оболочек о�
 Цикл `For`:
 
 ```powershell
-
   For ($i = 0; $i -lt 10; $i++)
   {
       If ($i % 2 -eq 0)
@@ -148,7 +146,6 @@ PowerShell в отличие от Cmd, Bash и других оболочек о�
 Цикл `While`:
 
 ```powershell
-
   $i = 0
   While ($i -lt 10)
   {
@@ -171,7 +168,6 @@ PowerShell в отличие от Cmd, Bash и других оболочек о�
 Цикл `ForEach`:
 
 ```powershell
-
   function test($i)
   {
       return "Hello $i"
@@ -185,7 +181,6 @@ PowerShell в отличие от Cmd, Bash и других оболочек о�
 Работа с функциями:
 
 ```powershell
-
   function fact($i)
   {
       if ($i -eq 1)
@@ -204,7 +199,6 @@ PowerShell в отличие от Cmd, Bash и других оболочек о�
 Ветвление:
 
 ```powershell
-
   $dow = "Friday"
   switch ($dow) {
     "Friday" {
@@ -222,13 +216,12 @@ PowerShell в отличие от Cmd, Bash и других оболочек о�
 Циклы с постусловием:
 
 ```powershell
-
   do {
     statement_list
   } while (conditional_expression)
+```
 
 ```powershell
-
   do {
     statement_list
   } until (conditional_expression)
