@@ -1,0 +1,4 @@
+baseURL = "https://volodya-leveryev.gihub.io/teaching/"
+languageCode = "ru-ru"
+title = "Teaching"
+theme = "hugo-book"

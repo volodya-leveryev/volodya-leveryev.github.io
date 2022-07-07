@@ -1,12 +1,1 @@
-# Compiled output
-output/
-docs/
-*.html
-*.pdf
-*.pyc
-
-# IDE settings
-/.vscode/
-
-# Libraries
-/venv/
+node_modules/
