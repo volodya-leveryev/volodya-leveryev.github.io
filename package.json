@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@mdx-js/loader": "^2.1.2",
+    "@next/mdx": "^12.2.0",
     "@types/node": "^18.0.3",
     "@types/react": "^18.0.15",
     "next": "^12.2.0",
