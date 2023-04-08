@@ -1,3 +1,9 @@
+---
+layout: default
+title: Apache Hive
+---
+
+# Apache Hive
 
 Что такое Hive?
 

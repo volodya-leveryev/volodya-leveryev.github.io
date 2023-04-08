@@ -1,3 +1,8 @@
+---
+layout: default
+title: Apache Pig
+---
+
 # Apache Pig
 
 Apache Pig Latin — язык обработки данных. Все данные 
