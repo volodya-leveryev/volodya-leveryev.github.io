@@ -1,3 +1,8 @@
+---
+layout: default
+title: Установка Redis
+---
+
 # Redis
 
 ## Установка
