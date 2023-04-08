@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	{% for episode, quotes in data.items() %}
+	<h1>{{ episode }}</h1>
+	<ul>
+		{% for number in range(1, quotes|length + 1) %}
+		<li>{{number}}: {{ quotes[number|string] }}</li>
+		{% endfor %}
+	</ul>
+	{% endfor %}
+</body>
+</html>

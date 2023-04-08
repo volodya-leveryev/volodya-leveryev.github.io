@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	{% for name, quotes in data.items() %}
+		<h1>{{ name }}</h1>
+		<ul>
+		{% for number, text in quotes.items() %}
+			<li>
+				{{ number }}, {{ text }}
+			</li>
+		{% endfor %}
+		</ul>
+	{% endfor %}
+</body>
+</html>

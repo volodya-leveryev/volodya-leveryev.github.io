@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Пользователь</h1>
+	<form method="POST">
+		<label>Имя</label>
+		<input type="text" name="first_name"{% if user %} value="{{ user.first_name }}"{% endif %}>
+		<label>Фамилия</label>
+		<input type="text" name="last_name"{% if user %} value="{{ user.last_name }}"{% endif %}>
+		<input type="submit" value="Сохранить">
+	</form>
+	<a href="/">Отмена</a>
+</body>
+</html>

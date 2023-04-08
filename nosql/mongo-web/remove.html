@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Удаление пользователя</h1>
+	<p>Вы действительно хотите удалить пользователя {{ user.first_name }} {{ user.last_name }}?</p>
+	<form method="POST">
+		<input type="submit" value="Удалить">
+	</form>
+	<a href="/">Отмена</a>
+</body>
+</html>

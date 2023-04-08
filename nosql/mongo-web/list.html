@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Список пользователей</h1>
+	<table>
+		<tbody>
+		{% for u in users %}
+		<tr>
+			<td><a href="/update/{{u._id}}/">{{ u.first_name }} {{ u.last_name }}</a></td>
+			<td><a href="/delete/{{u._id}}/">&times;</a></td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	<a href="/create/">Создать пользователя</a>
+</body>
+</html>
