@@ -118,14 +118,16 @@ title: Введение
 - [ArchLinux](https://www.archlinux.org/) — независимый дистрибутив, развиваемый сообществом и отличающийся максимально новым ПО, простотой и гибкостью кастомизации.
 
   - [Manjaro](https://manjaro.org/) — вариант дистрибутив ArchLinux с графическим установщиком и рядом всмопогательных утилит.
+  - [EndeavourOS](https://endeavouros.com/)
 
 - Другие известные дистрибутивы:
 
   - [Slackware](https://www.slackware.com/) — олдскульный и простой дистрибутив, поддерживаемый Патриком Фолькердингом
-    - [SUSE Linux Enterprise Server (SLES)](https://www.suse.com/products/server/) — популярный серверный дистрибутив с платной поддержкой от компании SUSE
-    - [openSUSE](https://www.opensuse.org/) — популярный бесплатный дистрибутив от компании SUSE
-    - [Gentoo](https://www.gentoo.org/) — дистрибутив использующий установку ПО из исходных кодов.
-    - [Solus](https://getsol.us/home/) — дистрибутив с графическим окружением Budgie.
+  - [SUSE Linux Enterprise Server (SLES)](https://www.suse.com/products/server/) — популярный серверный дистрибутив с платной поддержкой от компании SUSE
+  - [openSUSE](https://www.opensuse.org/) — популярный бесплатный дистрибутив от компании SUSE
+  - [Gentoo](https://www.gentoo.org/) — дистрибутив использующий установку ПО из исходных кодов.
+  - [Solus](https://getsol.us/home/) — дистрибутив с графическим окружением Budgie.
+  - [NixOS](https://nixos.org/) — дистрибутив с атомарными обновлениями.
 
 ## Стабильность или новизна?
 
