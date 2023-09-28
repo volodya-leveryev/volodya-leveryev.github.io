@@ -85,10 +85,10 @@ sudo apt update
 7. Создать описание стороннего репозитория:
 
     ```
-    sudo nano /etc/apt/sources.list.d/docker.list:
+    sudo nano /etc/apt/sources.list.d/docker.list
     ```
 
-    Добавить туда строку: `deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable`.
+    Добавить туда строку: `deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable`
 
 
 8. Обновить перечень пакетов:
@@ -107,7 +107,7 @@ sudo apt update
 10. Установить программу из стороннего репозитория.
 
     ```
-    sudo apt install docker
+    sudo apt install docker-ce
     ```
 
 11. Установить программу с помощью snap.
