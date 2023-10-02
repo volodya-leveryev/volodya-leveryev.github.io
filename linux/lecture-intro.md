@@ -215,6 +215,6 @@ title: Введение
 
 ## Литература
 
-- [Дмитрий Кетов. Внутреннее устройство Linux](https://drive.google.com/file/d/1EEAeifu3R92E5JA4aylDzufeKugmMYW5/view)
-- [Михаэль Кофлер. Linux. Установка, администрирование, настройка](https://drive.google.com/file/d/1hj0J7sKO3bUa06a8g74oEyO7DXRhyt8m/view)
-- [Уильям Шоттс. Командная строка Linux](https://drive.google.com/file/d/1VsfWKZtfu_--NmsFi7YgclpP0iVPdA9q/view)
+- Дмитрий Кетов. Внутреннее устройство Linux
+- Михаэль Кофлер. Linux. Установка, администрирование, настройка
+- Уильям Шоттс. Командная строка Linux

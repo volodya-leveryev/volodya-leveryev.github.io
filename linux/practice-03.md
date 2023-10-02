@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Работа в оболочке bash
+title: Установка ПО
 ---
 # Установка ПО
 
