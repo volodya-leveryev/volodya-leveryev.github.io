@@ -24,6 +24,6 @@ title: Оглавление
 15. Cloudflare
 16. GitHub Actions
 
-[Cloud database](./cloud_database)
+[Лаб. работа **AWS EC2 Spot Instances**](./aws_spot)
 
-[Cloud service providers](./provider_services)
+[Лаб. работа **AWS Cloudfront**](./aws_cloudfront)
