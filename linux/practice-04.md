@@ -61,6 +61,6 @@ title: Работа с задачами и потоками
 
 ## Дополнительные задания
 
-1. Изучите статью https://habr.com/ru/companies/ruvds/articles/339820/
-2. Изучите статью https://habr.com/ru/companies/ruvds/articles/336060/
-3. Изучите статью https://habr.com/ru/companies/lanit/articles/683638/
+1. Изучите статью [https://habr.com/ru/companies/ruvds/articles/339820/](https://habr.com/ru/companies/ruvds/articles/339820/).
+2. Изучите статью [https://habr.com/ru/companies/ruvds/articles/336060/](https://habr.com/ru/companies/ruvds/articles/336060/).
+3. Изучите статью [https://habr.com/ru/companies/lanit/articles/683638/](https://habr.com/ru/companies/lanit/articles/683638/).
