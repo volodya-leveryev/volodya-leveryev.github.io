@@ -67,11 +67,11 @@ title: Оглавление
 
 1. Создать конфигурацию для автозапуска новых инстансов (Launch Template)
 
-  * Имя <группа>-<фамилия>
+  * Имя: <группа>-<фамилия>
   * Имя версии Initial version
-  * Выбрать AMI counter
-  * Выбрать тип инстанса t2.micro
-  * Выбрать security group
+  * Выбрать AMI: Counter
+  * Выбрать тип инстанса: t2.micro
+  * Выбрать существующий security group: Default
 
 2. Создать группу масштабирования (Auto scaling group)
 
@@ -89,70 +89,6 @@ title: Оглавление
 4. Проверить масштабирование под нагрузкой с помощью `stress_test.py`
 
 5. Проверить что количество инстансов уменьшается после снятия нагрузки
-
-## Исходные коды
-
-Стартовый файл приложения `app.py`:
-
-```python
-from flask import Flask, render_template, request
- 
-app = Flask(__name__)
- 
-@app.route('/')
-def index():
-   ans = 0
-   n = int(request.args.get('n', 0))
-   if n:
-       for i in range(1, n+1):
-           ans += i
-   return render_template('index.html', ans=ans, n=n)
-```
-
-Шаблон главной страницы: `templates\index.html`:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-</head>
-<body>
-   {% if n %}
-   <p>Ответ: {{ ans }}</p>
-   {% endif %}
-   <form>
-       <label>Введите число</label>
-       <input type="text" name="n">
-   </form>
-</body>
-</html>
-```
-
-Файл описания службы `/etc/systemd/system/app.service`:
-
-```ini
-[Unit]
-Description = App
-After = network.target
- 
-[Service]
-PIDFile = /run/app.pid
-# User = ec2-user
-# Group = ec2-user
-WorkingDirectory = /home/ec2-user
-ExecStart = /home/ec2-user/venv/bin/gunicorn app:app -b 0.0.0.0:80 --pid /run/app.pid
-ExecReload = /bin/kill -s HUP $MAINPID
-ExecStop = /bin/kill -s TERM $MAINPID
-ExecStopPost = /bin/rm -rf /run/app
-PrivateTmp = true
- 
-[Install]
-WantedBy = multi-user.target
-```
 
 Скрипт для проверки нагрузки `stress_test.py`:
 
