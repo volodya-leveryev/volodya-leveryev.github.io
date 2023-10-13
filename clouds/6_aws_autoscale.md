@@ -45,22 +45,22 @@ title: Оглавление
 
 1. Создать конфигурацию для автозапуска новых инстансов (Launch Template)
 
-  * Имя: <группа>-<фамилия>
-  * Имя версии Initial version
-  * Выбрать AMI: Counter
-  * Выбрать тип инстанса: t2.micro
-  * Выбрать существующий security group: Default
+   * Имя: <группа>-<фамилия>
+   * Имя версии Initial version
+   * Выбрать AMI: Counter
+   * Выбрать тип инстанса: t2.micro
+   * Выбрать существующий security group: Default
 
 2. Создать группу масштабирования (Auto scaling group)
 
-  * Имя <группа>-<фамилия>
-  * Выбрать VPC
-  * Выбрать Subnets
-  * Создать новый Load Balancer (Application LB, internet-facing)
-  * Выбрать имя группы (target)
-  * Health check grace period: 60
-  * Maximum capacity: 5
-  * Scaling policies: Target tracking, Average CPU
+   * Имя <группа>-<фамилия>
+   * Выбрать VPC
+   * Выбрать Subnets
+   * Создать новый Load Balancer (Application LB, internet-facing)
+   * Выбрать имя группы (target)
+   * Health check grace period: 60
+   * Maximum capacity: 5
+   * Scaling policies: Target tracking, Average CPU
 
 3. Проверить масштабирование под нагрузкой вручную
 
