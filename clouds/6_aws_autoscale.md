@@ -39,29 +39,7 @@ title: Оглавление
 
 1. Войти в AWS Console
 
-2. Создать инстанс EC2
-
-3. Подготовить сайт для загрузки процессора
-
-    * создать:
-
-        - `app.py`
-        - `templates/index.html`
-
-    * установить библиотеки
-        - создать виртуальное окружение `python3 -m venv venv`
-        - активировать виртуальное окружение `source venv/bin/activate`
-        - установить библиотеки `pip install flask gunicorn`
-
-    * настроить службу
-
-        - создать и отредактировать `sudo nano /etc/systemd/system/app.service`
-        - перечитать описание служб `sudo systemctl daemon-reload`
-        - включаем автозапуск службы  `sudo systemctl enable app.service`
-        - запускаем службу `sudo systemctl start app.service`
-        - проверяем статус службы `sudo systemctl status app.service`
-
-4. Создать образ инстанса (AMI) — готов
+2. Найти образ инстанса (AMI) в разделе `EC2 \ Images \ AMIs`
 
 ## Ход работы
 
