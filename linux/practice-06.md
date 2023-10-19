@@ -60,6 +60,7 @@ title: Работа с дисками
    ```
    sudo mkfs -t ext4 /dev/vdb1
    sudo mkfs.ext3 /dev/vdb2
+   ...
    sudo blkid
    ```
 
@@ -69,7 +70,9 @@ title: Работа с дисками
 
    ```
    sudo mkdir /mnt/vdb1
+   sudo mkdir /mnt/vdb2
    sudo mount /dev/vdb1 /mnt/vdb1
+   sudo mount /dev/vdb2 /mnt/vdb2
    lsblk
    ```
 
@@ -94,12 +97,3 @@ title: Работа с дисками
    ```
 
    Сделайте скриншот содержимого файла `/etc/fstab` и результата работы команды `lsblk`.
-
-12. Отобразите показания SMART:
-
-   ```
-   sudo apt-get update
-   sudo apt-get install -y smartmontools
-   sudo smartctl -a /dev/vdb
-   ```
-   (если попросят сконфигурировать `postfix` - выбираем `No configuration`).
