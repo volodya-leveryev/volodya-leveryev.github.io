@@ -22,21 +22,12 @@ title: Работа с дисками
 
 ## Ход работы
 
-
-
-Добавить к виртуальной машине 4 диска
-Создать таблицу разделов
-Отформатировать файловую систему
-Смонтировать файловую систему
-Настроить файловую систему в /etc/fstab
-
-
 1. Ознакомиться с перечнем блочных устройств с помощью команды lsblk
 
 2. Запустите программу редактирования таблицы разделов `fdisk` и изучите её команды (нажмите клавишу `m`).
 
    ```
-   sudo fdisk /dev/sda
+   sudo fdisk /dev/vdb
    ```
 
    Создайте два раздела по 2 Гб с помощью fdisk, отобразите таблицу разделов (команда `p`) и сделайте скриншот.
@@ -44,7 +35,7 @@ title: Работа с дисками
 3. Создайте два раздела по 2 Гб с помощью cfdisk:
     
    ```
-   sudo cfdisk /dev/sdb
+   sudo cfdisk /dev/vdc
    ```
 
    Сделайте скриншот таблицы разделов
@@ -55,7 +46,7 @@ title: Работа с дисками
 
 
    ```
-   sudo parted /dev/sda
+   sudo parted /dev/vdd
    mklabel gpt
    mkpart '' 2048s 2099199s
    mkpart '' 2099200s 8388574s
@@ -64,15 +55,11 @@ title: Работа с дисками
 
    Отобразите таблицу разделов (команда `print`) и сделайте скриншот.
 
-5. Создайте два раздела по 1 Гб + 3 Гб на 3 чистом диске утилитой fdisk
-
-6. Создайте два раздела по 3 Гб + 1 Гб на 4 чистом диске утилитой cfdisk
-
-7. Создайте файловые системы на всех созданных разделах (кроме bfs, cramfs):
+5. Создайте файловые системы на всех созданных разделах (кроме bfs, cramfs):
 
    ```
-   sudo mkfs -t ext4 /dev/sda1
-   sudo mkfs.ext3 /dev/sda2
+   sudo mkfs -t ext4 /dev/vdb1
+   sudo mkfs.ext3 /dev/vdb2
    sudo blkid
    ```
 
@@ -81,15 +68,16 @@ title: Работа с дисками
 8. Смонтируйте (подключите) 2 раздела следующим образом:
 
    ```
-   sudo mkdir /mnt/sda1
-   sudo mount /dev/sda1 /mnt/sda1
+   sudo mkdir /mnt/vdb1
+   sudo mount /dev/vdb1 /mnt/vdb1
    lsblk
    ```
 
 9. Добавьте информацию о двух файловых системах в /etc/fstab и подключите их:
 
    ```
-   sudo mkdir /mnt/diskb_part1
+   sudo mkdir /mnt/vdc1
+   sudo mkdir /mnt/vdc2
    sudo nano /etc/fstab
    sudo mount -a
    ```
@@ -97,7 +85,10 @@ title: Работа с дисками
 10. Добавьте метки для двух файловых систем и указать их в /etc/fstab, затем подключите их:
    
    ```
-   sudo e2label /dev/sdc1 part1
+   sudo e2label /dev/vdd1 part1
+   sudo e2label /dev/vdd2 part2
+   sudo mkdir /mnt/vdd1
+   sudo mkdir /mnt/vdd2
    sudo nano /etc/fstab
    mount -a
    ```
@@ -109,6 +100,6 @@ title: Работа с дисками
    ```
    sudo apt-get update
    sudo apt-get install -y smartmontools
-   sudo smartctl -a /dev/sda
+   sudo smartctl -a /dev/vdb
    ```
    (если попросят сконфигурировать `postfix` - выбираем `No configuration`).
