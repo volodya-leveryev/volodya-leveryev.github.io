@@ -3,11 +3,11 @@ layout: default
 title: Оглавление
 ---
 
-# Практическая работа «MapReduce»
+# Практическая работа «PySpark»
 
 ## Цель работы
 
-Проверить работу платформы MapReduce.
+Проверить работу платформы PySpark.
 
 ## Ход работы
 
@@ -55,4 +55,5 @@ title: Оглавление
 
 * [Динамическое перенаправление TCP-портов](https://erev0s.com/blog/ssh-local-remote-and-dynamic-port-forwarding-explain-it-i-am-five/#dynamic-port-forwarding)
 * [Команды HDFS](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/FileSystemShell.html)
-* [Пример](https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
+* [Исходный код примера](https://hadoop.apache.org/docs/r3.3.4/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html#Example:_WordCount_v1.0)
+* [Как работать с PySpark](https://pythonru.com/biblioteki/pyspark-dlja-nachinajushhih)
