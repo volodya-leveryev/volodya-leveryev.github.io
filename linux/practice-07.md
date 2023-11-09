@@ -18,158 +18,109 @@ title: Установка и настройка веб-серверов
 - Сконфигурировать работу PHP через интерфейс FastCGI
 - Сконфигурировать проксирование веб-сайтов
 
-## Теоретические основы
-
-Наиболее популярные веб-серверы:
-
-- Apache HTTPd — гибко конфигурируется, много возможностей, не очень быстрый;
-- Nginx — нет всех возможностей Apache HTTPd, высокопроизводительный, часто используется как обратный прокси-сервер;
-- Lighttpd — высокопроизводительный, но немного уступает Nginx по скорости и возможностям;
-- Microsoft Internet Information Server — высокопроизводительный, работает только в ОС Windows, единственный вариант, если нужно разместить веб-сайт на ASP.NET, иногда имеет проблемы с безопасностью;
-
-Интерфейсы для подключения серверных скриптов:
-
-- CGI (Common Gateway Interface) — использует потоки ввода / вывода, не очень быстрый, универсальный;
-- FastCGI — использует TCP-сокеты и UNIX-сокеты, эффективно кеширует серверный код, значительно быстрее CGI, универсальный;
-- SCGI (Simple CGI) — упрощенный вариант FastCGI, быстрее CGI, универсальный;
-- WSGI — специализированный интерфейс для Python;
-- PSGI — специализированный интерфейс для Perl;
-
-Обратные прокси-серверы используются для:
-
-- распределение нагрузки между несколькими веб-серверами;
-- выполнения дополнительных преобразований с возвращаемым клиенту контентом (например: сжатие, TLS-шифрование и т.п.);
-- защита от внешних атак;
-
 ## Подготовительный этап
 
-- Перед запуском виртуальной машины настройте её так, чтобы у нее было два сетевых адаптера:
+- Отредактируйте на локальном компьютере файл `C:\Windows\System32\Drivers\etc\hosts` (для редактирования нужны права администратора, пароль администратора: «имикиц428»). В этот файл нужно поместить строки вида:
 
-    - Работающий в режиме «NAT»
-    - Работающий в режиме «Виртуальный адаптер хоста» (Host-only adapter)
+  ```
+  <IP-адрес сервера> test1.example.com
+  <IP-адрес сервера> test2.example.com
+  ```
 
-- С помощью команды `ip address` убедитесь, что сетевые адаптеры получили IP-адреса:
+- Добавьте аналогичные строки в файл `/etc/hosts` на сервере.
 
-    - в сети 10.0.2.0/24 или 10.0.3.0/24
-    - в сети 192.168.56.0/24
+## Настройка виртуальных хостов в веб-сервере Apache HTTPd
 
-- Отредактируйте на хост-компьютере файл `C:\Windows\System32\Drivers\etc\hosts` (для редактирования нужны права администратора, пароль администратора: «имикиц428»). В этот файл нужно поместить строки вида (IP-адрес нужно заменить на тот, который получен вашей виртуальной машиной в сети 192.168.56.0/24):
+1. Установите пакет веб-сервера Apache HTTPd: `apache2` и `libapache2-mod-php`.
 
-```
-  192.168.56.101 test1
-  192.168.56.101 test2
-```
+2. Откройте в браузере адрес http://test1.example.com и убедитесь что веб-сервер работает.
 
-- Добавьте аналогичные строки в файл `/etc/hosts` в виртуальной машине
+3. Создайте каталог www в домашней каталоге и поместите в него файл `index.php` следующего вида:
 
-## Установка веб-сервера Apache HTTPd
+   ```
+   <?php phpinfo(); ?>
+   ```
 
-- Установите пакет веб-сервера Apache HTTPd:
+   Создайте файл `/etc/apache2/sites-available/newsite.conf` (сделайте соответствующую замену):
 
-```bash
-  sudo apt get install apache2
-```
+   ```
+   <VirtualHost *:80>
+       ServerName test2
+       DocumentRoot /home/user/www
+       <Directory /home/user/www>
+           Require all granted
+       </Directory>
+   </VirtualHost>
+   ```
 
-- Откройте в браузере хост-компьютера адрес http://test1 и убедитесь, что веб-сервер заработал.
+  Включите новый виртуальный хост:
 
-- Установите модуль для работы Apache HTTPd с PHP:
+   ```bash
+   sudo a2ensite newsite
+   sudo systemctl reload apache2
+   ```
 
-```bash
-    sudo apt install libapache2-mod-php
-```
 
-- Создайте каталог www в домашней каталоге и поместите в него файл `index.php` следующего
-    вида:
+4. Откройте в браузере хост-компьютера адреса http://test1.example.com и http://test2.example.com и убедитесь, что веб-сервер по-разному обслуживает два виртуальных хоста. **Сделайте скриншоты обоих сайтов.**
 
-```
-  <?php
-      phpinfo();
-  ?>
-```
+5. Добавьте в файл `/etc/apache2/sites-available/newsite.conf` внутрь тега `<Directory>` строку:
 
-- Создайте файл `/etc/apache2/sites-available/test2.conf` (сделайте соответствующую замену):
+   ```
+   Options Indexes
+   ```
 
-```
-  <VirtualHost *:80>
-      ServerName test2
-      DocumentRoot /home/user/www
-      <Directory /home/user/www>
-          Require all granted
-      </Directory>
-  </VirtualHost>
-```
+   Переименуйте файл `/home/yc-user/www/index.php` в `index.php.bak`, перезапустите Apache HTTPd и проверьте, что изменилось в работе веб-сервера. **Сделайте скриншот изменившегося сайта.** 
+   
+   Переименуйте файл `/home/user/www/index.php.bak` обратно в `index.php`.
 
-- Включите новый виртуальный хост:
+6. Проверьте номера TCP-портов который использует сервер Apache HTTPd:
 
-```bash
-  sudo a2ensite test2
-```
+   ```bash
+   sudo ss -ltnp
+   ```
 
-- Дайте команду Apache HTTPd перечитать конфигурацию:
+   Измените в файле `/etc/apache/ports.conf` номера основного порта с 80 на 8080. Внесите аналогичные изменения в файлах `default.conf` и `newsite.conf` в каталоге `/etc/apache2/sites-available`.
 
-```bash
-  sudo systemctl reload apache2
-```
+   Перезапустите Apache HTTPd и проверьте номера TCP-портов:
 
-- Откройте в браузере хост-компьютера адреса http://test1 и http://test1 и убедитесь, что веб-сервер по-разному обслуживает два виртуальных хоста.
+   ```bash
+   sudo systemctl restart apache2
+   sudo ss -ltnp
+   ```
 
-- Добавьте в файл `/etc/apache2/sites-available/test2` внутрь тега `<Directory>` строку:
-
-```
-  Options Indexes
-```
-
-- Переименуйте файл `/home/user/www/index.php` в `index.php.bak`, перезагрузите конфигурацию Apache HTTPd и проверьте, что изменилось. Как измениться работа веб-сервера без опции `Indexes`?
-
-- Переименуйте файл `/home/user/www/index.php.bak` обратно в `index.php`.
-
-- Измените в файле `/etc/apache/ports.conf` номера основного портов с 80 на 8080. Внесите аналогичные изменения в файлах `default` и `test2` в каталоге `/etc/apache2/sites-available`.
-
-- Дайте команду Apache HTTPd перечитать конфигурацию:
-
-```bash
-  sudo systemctl reload apache2
-```
+   **Сделайте скриншот TCP-портов до и после.**
 
 ## Установка веб-сервера Nginx
 
-1. Установите необходимые пакеты с помощью команды:
+7. Установите необходимые пакеты: `nginx` и `php-fpm`.
 
-```bash
-  sudo apt-get install nginx php-fpm
-```
+   Откройте в браузере хост-компьютера адреса http://test1.example.com, http://test1.example.com:8080 и http://test2.example.com:8080, убедитесь, что веб-серверы Apache HTTPd и Nginx работают. **Сделайте скриншот с Nginx.**
 
-2. Откройте в браузере хост-компьютера адреса http://test1, http://test1:8080 и http://test2:8080, убедитесь, что веб-серверы Apache HTTPd и Nginx работают.
+8. Добавьте файл newsite в каталог `/etc/nginx/sites-available/`:
 
-3. Добавьте файл test2 в каталог `/etc/nginx/sites-available/`:
+   ```
+   server {
+       listen 80;
+       server_name test2.example.com;
+       root /home/yc-user/www;
+       location / {
+           index index.php;
+       }
+       location /t1 {
+           proxy_pass http://test1.example.com:8080/;
+       }
+       location /t2 {
+           proxy_pass http://test2.example.com:8080/;
+       }
+       location ~ \.php$ {
+           include snippets/fastcgi-php.conf;
+           fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;  # Перепроверить правильность
+       }
+   }
+   ```
 
-```
-  server {
-      listen 80;
-      server_name test2;
-      root /home/user/www;
-      location / {
-          index index.php;
-      }
-      location /t1 {
-          proxy_pass http://test1:8080/;
-      }
-      location /t2 {
-          proxy_pass http://test2:8080/;
-      }
-      location ~ \.php$ {
-          include snippets/fastcgi-php.conf;
-          fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
-      }
-  }
-```
+   Создайте символическую ссылку на файл `/etc/nginx/sites-available/test2` в каталоге `/etc/nginx/sites-enabled` и перезапустите Nginx.
 
-1. Создайте символическую ссылку на файл `/etc/nginx/sites-available/test2` в каталоге `/etc/nginx/sites-enabled` и перезапустите Nginx.
+9. Откройте в браузере хост-компьютера страницы по адресам http://test1.example.com, http://test2.example.com, http://test2.example.com/t1 и http://test2.example.com/t2, убедитесь, что веб-серверы Apache HTTPd и Nginx работают вместе.
 
-2. Откройте в браузере хост-компьютера страницы по адресам http://test1, http://test2, http://test2/t1 и http://test2/t2, убедитесь, что веб-серверы Apache HTTPd и Nginx работают вместе.
-
-## Литература
-
-1. Кофлер М. Linux. Установка, настройка, администрирование
-2. https://httpd.apache.org/docs/2.4/
-3. https://nginx.org/ru/docs/
+   Откройте в браузере отладчик (Ctrl+Shift+C или F12) на вкладке Network и найдите заголовок `Server` и убедитесь что указан веб-сервер Nginx. **Сделайте скриншоты всех 4 сайтов.**
