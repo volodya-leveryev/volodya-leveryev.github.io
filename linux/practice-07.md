@@ -29,11 +29,13 @@ title: Установка и настройка веб-серверов
 
 - Добавьте аналогичные строки в файл `/etc/hosts` на сервере.
 
+- Создать отчет о выполнении лабораторной работы в формате *.docx.
+
 ## Настройка виртуальных хостов в веб-сервере Apache HTTPd
 
 1. Установите пакет веб-сервера Apache HTTPd: `apache2` и `libapache2-mod-php`.
 
-2. Откройте в браузере адрес http://test1.example.com и убедитесь что веб-сервер работает.
+2. Откройте в браузере адрес [http://test1.example.com](http://test1.example.com) и убедитесь что веб-сервер работает.
 
 3. Создайте каталог www в домашней каталоге и поместите в него файл `index.php` следующего вида:
 
@@ -53,7 +55,7 @@ title: Установка и настройка веб-серверов
    </VirtualHost>
    ```
 
-  Включите новый виртуальный хост:
+   Включите новый виртуальный хост:
 
    ```bash
    sudo a2ensite newsite
@@ -61,7 +63,7 @@ title: Установка и настройка веб-серверов
    ```
 
 
-4. Откройте в браузере хост-компьютера адреса http://test1.example.com и http://test2.example.com и убедитесь, что веб-сервер по-разному обслуживает два виртуальных хоста. **Сделайте скриншоты обоих сайтов.**
+4. Откройте в браузере хост-компьютера адреса [http://test1.example.com](http://test1.example.com) и [http://test2.example.com](http://test2.example.com) и убедитесь, что веб-сервер по-разному обслуживает два виртуальных хоста. **Сделайте скриншоты обоих сайтов.**
 
 5. Добавьте в файл `/etc/apache2/sites-available/newsite.conf` внутрь тега `<Directory>` строку:
 
@@ -94,7 +96,7 @@ title: Установка и настройка веб-серверов
 
 7. Установите необходимые пакеты: `nginx` и `php-fpm`.
 
-   Откройте в браузере хост-компьютера адреса http://test1.example.com, http://test1.example.com:8080 и http://test2.example.com:8080, убедитесь, что веб-серверы Apache HTTPd и Nginx работают. **Сделайте скриншот с Nginx.**
+   Откройте в браузере хост-компьютера адреса [http://test1.example.com](http://test1.example.com), [http://test1.example.com:8080](http://test1.example.com:8080) и [http://test2.example.com:8080](http://test2.example.com:8080), убедитесь, что веб-серверы Apache HTTPd и Nginx работают. **Сделайте скриншот с Nginx.**
 
 8. Добавьте файл newsite в каталог `/etc/nginx/sites-available/`:
 
@@ -121,6 +123,6 @@ title: Установка и настройка веб-серверов
 
    Создайте символическую ссылку на файл `/etc/nginx/sites-available/test2` в каталоге `/etc/nginx/sites-enabled` и перезапустите Nginx.
 
-9. Откройте в браузере хост-компьютера страницы по адресам http://test1.example.com, http://test2.example.com, http://test2.example.com/t1 и http://test2.example.com/t2, убедитесь, что веб-серверы Apache HTTPd и Nginx работают вместе.
+9. Откройте в браузере хост-компьютера страницы по адресам [http://test1.example.com](http://test1.example.com), [http://test2.example.com](http://test2.example.com), [http://test2.example.com/t1](http://test2.example.com/t1) и [http://test2.example.com/t2](http://test2.example.com/t2), убедитесь, что веб-серверы Apache HTTPd и Nginx работают вместе.
 
    Откройте в браузере отладчик (Ctrl+Shift+C или F12) на вкладке Network и найдите заголовок `Server` и убедитесь что указан веб-сервер Nginx. **Сделайте скриншоты всех 4 сайтов.**
