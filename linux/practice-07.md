@@ -48,13 +48,14 @@ title: Установка и настройка веб-серверов
    ```
    <VirtualHost *:80>
        ServerName test2
-       DocumentRoot /home/user/www
-       <Directory /home/user/www>
+       DocumentRoot /home/<ИМЯ ПОЛЬЗОВАТЕЛЯ>/www
+       <Directory /home/<ИМЯ ПОЛЬЗОВАТЕЛЯ>/www>
            Require all granted
        </Directory>
    </VirtualHost>
    ```
-
+   Добавьте права на чтение и доступ к домашнему каталогу пользователя командой `chmod`.
+   
    Включите новый виртуальный хост:
 
    ```bash
@@ -63,9 +64,9 @@ title: Установка и настройка веб-серверов
    ```
 
 
-4. Откройте в браузере хост-компьютера адреса [http://test1.example.com](http://test1.example.com) и [http://test2.example.com](http://test2.example.com) и убедитесь, что веб-сервер по-разному обслуживает два виртуальных хоста. **Сделайте скриншоты обоих сайтов.**
+5. Откройте в браузере хост-компьютера адреса [http://test1.example.com](http://test1.example.com) и [http://test2.example.com](http://test2.example.com) и убедитесь, что веб-сервер по-разному обслуживает два виртуальных хоста. **Сделайте скриншоты обоих сайтов.**
 
-5. Добавьте в файл `/etc/apache2/sites-available/newsite.conf` внутрь тега `<Directory>` строку:
+6. Добавьте в файл `/etc/apache2/sites-available/newsite.conf` внутрь тега `<Directory>` строку:
 
    ```
    Options Indexes
@@ -75,7 +76,7 @@ title: Установка и настройка веб-серверов
    
    Переименуйте файл `/home/user/www/index.php.bak` обратно в `index.php`.
 
-6. Проверьте номера TCP-портов который использует сервер Apache HTTPd:
+7. Проверьте номера TCP-портов который использует сервер Apache HTTPd:
 
    ```bash
    sudo ss -ltnp
