@@ -136,7 +136,7 @@ title: Работа с Docker
 
     * `Dockerfile`:
       ```
-      FROM python:slim-3.11
+      FROM python:3.11-slim
       COPY . .
       RUN pip install flask
       CMD flask run
