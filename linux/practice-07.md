@@ -47,7 +47,7 @@ title: Установка и настройка веб-серверов
 
    ```
    <VirtualHost *:80>
-       ServerName test2
+       ServerName test2.example.com
        DocumentRoot /home/<ИМЯ ПОЛЬЗОВАТЕЛЯ>/www
        <Directory /home/<ИМЯ ПОЛЬЗОВАТЕЛЯ>/www>
            Require all granted
@@ -117,7 +117,7 @@ title: Установка и настройка веб-серверов
        }
        location ~ \.php$ {
            include snippets/fastcgi-php.conf;
-           fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;  # Перепроверить правильность
+           fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;  # Перепроверить правильность
        }
    }
    ```
