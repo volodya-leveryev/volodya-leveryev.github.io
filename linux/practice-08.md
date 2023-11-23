@@ -139,7 +139,7 @@ title: Работа с Docker
       FROM python:3.11-slim
       COPY . .
       RUN pip install flask
-      CMD flask run
+      CMD flask run --host=0.0.0.0
       ```
 
 16. Создайте образ и запустите его:
@@ -147,7 +147,7 @@ title: Работа с Docker
     ```
     docker build -t custom-image .
 
-    docker run -d -p 80:80 custom-image
+    docker run -d -p 80:5000 custom-image
     ```
 
     **Добавьте к отчету скриншот работы команд в консоли.**
