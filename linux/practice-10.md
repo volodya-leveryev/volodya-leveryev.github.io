@@ -170,7 +170,7 @@ LVM имеет три уровня абстракции:
 
 ## Дополнительная литература
 
-* [LVM - xgu.ru](http://xgu.ru/wiki/LVM)
 * [LVM - ArchWiki](https://wiki.archlinux.org/title/LVM)
-* [Logical Volume Manager (LVM)](https://help.ubuntu.ru/wiki/lvm)
-* [Повесть о Linux и LVM](https://www.opennet.ru/docs/RUS/linux_lvm/)
+* [LVM для начинающих 1](https://interface31.ru/tech_it/2020/07/lvm-dlya-nachinayushhih-chast-1-obshhie-voprosy.html)
+* [LVM для начинающих 2](https://interface31.ru/tech_it/2020/08/lvm-dlya-nachinayushhih-chast-2-osnovy-upravleniya-tomami.html)
+* [LVM - xgu.ru](http://xgu.ru/wiki/LVM)
