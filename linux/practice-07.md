@@ -82,7 +82,7 @@ title: Установка и настройка веб-серверов
    sudo ss -ltnp
    ```
 
-   Измените в файле `/etc/apache2/ports.conf` номера основного порта с 80 на 8080. Внесите аналогичные изменения в файлах `default.conf` и `newsite.conf` в каталоге `/etc/apache2/sites-available`.
+   Измените в файле `/etc/apache2/ports.conf` номера основного порта с 80 на 8080. Внесите аналогичные изменения в файлах `000-default.conf` и `newsite.conf` в каталоге `/etc/apache2/sites-available`.
 
    Перезапустите Apache HTTPd и проверьте номера TCP-портов:
 
