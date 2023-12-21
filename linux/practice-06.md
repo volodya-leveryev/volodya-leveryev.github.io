@@ -91,13 +91,13 @@ title: Работа с дисками
 
 10. Добавьте метки для двух файловых систем и указать их в /etc/fstab, затем подключите их:
    
-   ```
-   sudo e2label /dev/vdd1 part1
-   sudo e2label /dev/vdd2 part2
-   sudo mkdir /mnt/vdd1
-   sudo mkdir /mnt/vdd2
-   sudo nano /etc/fstab
-   mount -a
-   ```
+    ```
+    sudo e2label /dev/vdd1 part1
+    sudo e2label /dev/vdd2 part2
+    sudo mkdir /mnt/vdd1
+    sudo mkdir /mnt/vdd2
+    sudo nano /etc/fstab
+    sudo mount -a
+    ```
 
    Сделайте скриншот содержимого файла `/etc/fstab` и результата работы команды `lsblk`.
