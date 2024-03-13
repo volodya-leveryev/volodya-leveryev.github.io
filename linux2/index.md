@@ -1,7 +1,9 @@
 # Темы курса Linux 2
 
 ## Тема 1. Docker
+
 ## Тема 2. Nginx, HTTP Proxy, Docker, Certbot SSL
+
 ## Тема 3. Docker Compose, Build,  Django, PostgreSQL
 
 ```python
@@ -51,11 +53,19 @@ admin.site.register(StudyGroup)
 ```
 
 ## Тема 4. 
+
 ## Тема 5. 
+
 ## Тема 6. 
+
 ## Тема 7. 
+
 ## Тема 8. 
+
 ## Тема 9. 
+
 ## Тема 10. 
+
 ## Тема 11. 
+
 ## Тема 12. 
