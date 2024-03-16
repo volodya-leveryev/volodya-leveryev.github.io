@@ -66,6 +66,26 @@ Resources:
     Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: !Ref NewBucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: False
+        BlockPublicPolicy: False
+        IgnorePublicAcls: False
+        RestrictPublicBuckets: False
+      WebsiteConfiguration:
+        IndexDocument: index.html
+  WebsitePolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref HelloBucket
+      PolicyDocument:
+        Statement:
+          - Action:
+            - s3:GetObject
+            Effect: Allow
+            Principal: '*'
+            Resource: !Join
+              - ''
+              - ['arn:aws:s3:::', !Ref HelloBucket, /*]
 
 Outputs:
   CreatedBucketName:
