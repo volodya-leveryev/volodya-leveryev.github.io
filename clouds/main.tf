@@ -4,12 +4,27 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "create" {
+resource "aws_s3_bucket" "my_bucket" {
   bucket = var.bucket_name
 }
 
+resource "aws_s3_bucket_policy" "my_policy" {
+  bucket = aws_s3_bucket.my_bucket.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect    = "Allow"
+        Principal = "*"
+        Action    = ["s3:GetObject", "s3:PutObject"]
+        Resource  = "${aws_s3_bucket.my_bucket.arn}/*"
+      },
+    ]
+  })
+}
+
 resource "aws_s3_bucket_website_configuration" "web" {
-  bucket = aws_s3_bucket.create.bucket
+  bucket = aws_s3_bucket.my_bucket.bucket
 
   index_document {
     suffix = "index.html"
@@ -17,11 +32,10 @@ resource "aws_s3_bucket_website_configuration" "web" {
 }
 
 resource "aws_s3_object" "index" {
-  bucket = aws_s3_bucket.create.bucket
+  bucket = aws_s3_bucket.my_bucket.bucket
   key = "index.html"
   source = "./index.html"
   content_type = "text/html"
-  acl = "public-read"
 }
 
 # resource "aws_s3_object" "video" {
