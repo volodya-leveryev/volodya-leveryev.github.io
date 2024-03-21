@@ -1,3 +1,6 @@
 url: "https://volodya-leveryev.github.io"
 title: "Учебные материалы"
 lang: "ru"
+exclude:
+  - docker-compose.yml
+  - readme.md
