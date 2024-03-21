@@ -1,4 +1,9 @@
-# Terraform
+---
+layout: default
+title: Terraform
+---
+
+# {{page.title}}
 
 ## Практика
 

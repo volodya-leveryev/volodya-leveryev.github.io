@@ -27,3 +27,5 @@ title: Оглавление
 [Лаб. работа **AWS EC2 Spot Instances**](./aws_spot)
 
 [Лаб. работа **AWS Cloudfront**](./aws_cloudfront)
+
+[Лаб. работа **Terraform**](./terraform/)
