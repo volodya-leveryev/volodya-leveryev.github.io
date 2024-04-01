@@ -116,21 +116,24 @@ sudo cp db.localhost db.example.com
 sudo nano db.example.com
 ```
 ```
-$TTL    86400
-@       IN      SOA 	example.com. root.localhost. (
-                          	1     	; Serial
-                     	604800     	; Refresh
-                      	86400     	; Retry
-                    	2419200     	; Expire
-                      	86400 )   	; Negative Cache TTL
+$TTL    86400           ; default records TTL
+$ORIGIN example.com.    ; now @ denotes example.com.
+@       IN      SOA     ns.example.com. root.localhost. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                          86400 )       ; TTL of SOA
 ;
-@   	IN  	NS  	ns
-ns  	IN  	A   	192.168.1.1
-www 	IN  	A   	192.168.1.1
+@       IN      NS      ns
+ns      IN      A       192.168.1.1
+www     IN      A       192.168.1.1
 ```
 
 Проверка:
 ```
-systemctl status named
+systemctl status named.service
+sudo systemctl restart named.service
+sudo journalctl -xeu named.service
 nslookup www.google.com 127.0.0.1
 ```
