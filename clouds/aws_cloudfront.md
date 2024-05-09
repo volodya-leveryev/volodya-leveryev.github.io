@@ -5,22 +5,32 @@ title: Оглавление
 
 # AWS CloudFront
 
+## Теория
+
+AWS Route53 — DNS.
+
+AWS CloudFront — CDN (Content Delivery Network). Этот сервис не привязан к конкретному региону и всегда базируется в первом по счету регионе: `us-east-1`.
+
+Хороший CDN имеет много точек присутствия (Point of Presence, POP).
+
+Хороший CDN имеет хорошие магистральные каналы связи.
+
 ## Подготовительные шаги
 
 1. Создайте в текстовом редакторе файл:
 
-    ```
-    <html>
-    <body>
-    <video width="1920" height="1080" controls>
-        <source src="clip.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    </body>
-    </html>
-    ```
+   ```
+   <html>
+   <body>
+   <video width="1920" height="1080" controls>
+       <source src="clip.mp4" type="video/mp4">
+       Your browser does not support the video tag.
+   </video>
+   </body>
+   </html>
+   ```
 
-    и сохраните его в файле `index.html`.
+   и сохраните его в файле `index.html`.
 
 2. Откройте [YouTube](https://youtube.com/) и найдите ролик длительностью от 10 до 20 минут.
 
@@ -35,34 +45,34 @@ title: Оглавление
 
 4. Создайте S3 бакет с именем `<группа>-<фамилия>`:
 
-    ```
-    aws s3 mb s3://<группа>-<фамилия>/ --region sa-east-1
-    ```
+   ```cmd
+   aws s3 mb s3://<группа>-<фамилия>/ --region sa-east-1
+   ```
 
 5.  Убедитесь, что бакет создан, проверив их список:
 
-    ```
-    aws s3 ls
-    ```
+   ```cmd
+   aws s3 ls
+   ```
 
 6.  Включите режим работы веб-сайта:
 
-    ```
-    aws s3 website s3://<группа>-<фамилия>/ --index index.html
-    ```
+   ```cmd
+   aws s3 website s3://<группа>-<фамилия>/ --index index.html
+   ```
 
 7. Скачайте ролик:
 
-    ```
-    pip3 install yt-dlp
-    yt-dlp -f 137 -o "clip.mp4" "<ссылка на ролик>"
-    ```
+   ```cmd
+   pip3 install yt-dlp
+   yt-dlp -f 137 -o "clip.mp4" "<ссылка на ролик>"
+   ```
 
 8. Загрузите ролик в бакет:
 
-    ```
-    aws s3 cp clip.mp4 s3://<группа>-<фамилия>/
-    ```
+   ```cmd
+   aws s3 cp clip.mp4 s3://<группа>-<фамилия>/
+   ```
 
 9. Закройте CloudShell и вернитесь в веб-консоль.
 
