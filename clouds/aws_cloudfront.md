@@ -7,13 +7,25 @@ title: Оглавление
 
 ## Теория
 
-AWS Route53 — DNS.
+AWS CloudFront — это CDN (Content Delivery Network) облачного провайдера AWS. Он позволяет ускорить доступ к файлам через Интернет. Работает с помощью кеширования файлов на серверах в точках присутствия (Point of Presence — POP) которые которые расположены близко к клиентам.
 
-AWS CloudFront — CDN (Content Delivery Network). Этот сервис не привязан к конкретному региону и всегда базируется в первом по счету регионе: `us-east-1`.
+<div style="text-align:center">
+<img src="aws_cloudfront.png" alt="aws_cloudfront" width="75%"/>
+</div>
+
+Этот сервис не привязан к конкретному региону и всегда базируется в первом по счету регионе: `us-east-1`.
 
 Хороший CDN имеет много точек присутствия (Point of Presence, POP).
 
 Хороший CDN имеет хорошие магистральные каналы связи.
+
+Примеры CDN:
+* YouTube использует Google Global Cache со специализированными серверами
+* Netflix развивает свою сеть CDN со специализированными серверами
+* Akamai
+* Cloudflare
+* Fastly
+* AWS Cloudfront
 
 ## Подготовительные шаги
 
@@ -49,13 +61,13 @@ AWS CloudFront — CDN (Content Delivery Network). Этот сервис не п
    aws s3 mb s3://<группа>-<фамилия>/ --region sa-east-1
    ```
 
-5.  Убедитесь, что бакет создан, проверив их список:
+5. Убедитесь, что бакет создан, проверив их список:
 
    ```cmd
    aws s3 ls
    ```
 
-6.  Включите режим работы веб-сайта:
+6. Включите режим работы веб-сайта:
 
    ```cmd
    aws s3 website s3://<группа>-<фамилия>/ --index index.html
