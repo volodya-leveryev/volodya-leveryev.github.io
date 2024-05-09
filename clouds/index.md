@@ -23,6 +23,7 @@ title: Оглавление
 14. GCP
 15. Cloudflare
 16. GitHub Actions
+17. [AWS Fargate](./aws_fargate.md)
 
 [Лаб. работа **AWS EC2 Spot Instances**](./aws_spot)
 
