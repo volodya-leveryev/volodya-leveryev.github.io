@@ -7,18 +7,16 @@ title: Оглавление
 
 [Назад](../)
 
-1. Введение
+1. [Введение](./intro)
 2. AWS EC2
-4. [AWS VPC](./4_aws_vpc)
-5. [AWS RDS](./7_aws_rds)
-6. AWS DynamoDB
-7. AWS Lambda
-8. AWS Cloudformation
-9. Docker
-10. Docker Compose
-11. [Azure](./13_azure)
-12. GCP
-13. Cloudflare
+3. [AWS VPC](./4_aws_vpc)
+4. [AWS RDS](./7_aws_rds)
+5. AWS Cloudformation
+6. Docker
+7. Docker Compose
+8. [Azure](./13_azure)
+9. GCP
+10. Cloudflare
 
 [Сравнение облачных сервисов](provider_services)
 
