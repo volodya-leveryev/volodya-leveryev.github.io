@@ -23,10 +23,13 @@ title: Оглавление
 14. GCP
 15. Cloudflare
 16. GitHub Actions
-17. [AWS Fargate](./aws_fargate.md)
 
-[Лаб. работа **AWS EC2 Spot Instances**](./aws_spot)
+[Лаб. работа AWS EC2 Spot Instances](./aws_spot)
 
-[Лаб. работа **AWS Cloudfront**](./aws_cloudfront)
+[Лаб. работа AWS Cloudfront](./aws_cloudfront)
 
-[Лаб. работа **Terraform**](./terraform/)
+[Лаб. работа Terraform](./terraform/)
+
+[Лаб. работа GCP Cloud Run](./gcp_cloud_run)
+
+[Лаб. работа AWS Fargate](./aws_fargate)
