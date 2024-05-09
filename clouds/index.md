@@ -30,6 +30,8 @@ title: Оглавление
 
 [Лаб. работа AWS Lambda](./aws_lambda)
 
+[Лаб. работа AWS DynamoDB](./aws_dynamodb)
+
 [Лаб. работа AWS Cloudfront](./aws_cloudfront)
 
 [Лаб. работа AWS Beanstalk](./aws_beanstalk)
