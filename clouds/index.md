@@ -29,6 +29,8 @@ title: Оглавление
 
 [Лаб. работа Terraform](./terraform/)
 
+[Лаб. работа AWS Beanstalk](./aws_beanstalk)
+
 [Лаб. работа GitHub Actions](./gh_actions)
 
 [Лаб. работа GCP Cloud Run](./gcp_cloud_run)
