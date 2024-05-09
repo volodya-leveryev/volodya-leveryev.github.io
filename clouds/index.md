@@ -28,6 +28,8 @@ title: Оглавление
 
 [Лаб. работа AWS EC2 Auto Scaling](./aws_autoscale)
 
+[Лаб. работа AWS Lambda](./aws_lambda)
+
 [Лаб. работа AWS Cloudfront](./aws_cloudfront)
 
 [Лаб. работа AWS Beanstalk](./aws_beanstalk)
