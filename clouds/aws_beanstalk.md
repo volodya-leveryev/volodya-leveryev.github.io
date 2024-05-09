@@ -28,7 +28,7 @@ Elastic Beanstalk использует AWS Cloudformation для быстрог�
 * с разными копиями СУБД, которые связаны скриптами миграции
 
 Ссылки:
-https://aws.amazon.com/ru/elasticbeanstalk/
+[https://aws.amazon.com/ru/elasticbeanstalk/](https://aws.amazon.com/ru/elasticbeanstalk/)
 
 ## Практика
 

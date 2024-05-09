@@ -119,8 +119,8 @@ GitHub Actions:
 24. Добавить описание задания для запуска docker compose на сервере по SSH.
 
 Документация:
-* https://docs.github.com/en/actions/publishing-packages/publishing-docker-images#publishing-images-to-github-packages
-* https://github.com/marketplace/actions/ssh-remote-commands
+* [https://docs.github.com/en/actions/publishing-packages/publishing-docker-images#publishing-images-to-github-packages](https://docs.github.com/en/actions/publishing-packages/publishing-docker-images#publishing-images-to-github-packages)
+* [https://github.com/marketplace/actions/ssh-remote-commands](https://github.com/marketplace/actions/ssh-remote-commands)
 
 
 **app.py**:
