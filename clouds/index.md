@@ -22,13 +22,14 @@ title: Оглавление
 13. [Azure](./13_azure)
 14. GCP
 15. Cloudflare
-16. GitHub Actions
 
 [Лаб. работа AWS EC2 Spot Instances](./aws_spot)
 
 [Лаб. работа AWS Cloudfront](./aws_cloudfront)
 
 [Лаб. работа Terraform](./terraform/)
+
+[Лаб. работа GitHub Actions](./gh_actions)
 
 [Лаб. работа GCP Cloud Run](./gcp_cloud_run)
 
