@@ -49,22 +49,24 @@ title: Оглавление
 
    * Имя: <группа>-<фамилия>
    * Имя версии Initial version
-   * Выбрать AMI: Counter
-   * Выбрать тип инстанса: t2.micro
+   * Выбрать AMI: MyImages, Counter
+   * Выбрать тип инстанса: t3.micro
    * Выбрать существующий security group: Default
+   * Resource tags: Name: <группа-фамилия>
 
 2. Создать группу масштабирования (Auto scaling group)
 
    * Имя <группа>-<фамилия>
-   * Выбрать VPC
-   * Выбрать Subnets
-   * Создать новый Load Balancer (Application LB, internet-facing)
+   * Launch template — из предыдущего шага
+   * Выбрать VPC и все зоны доступности
+   * Создать новый load balancer (Application Load Balancer, Internet-facing, Create target group)
    * Выбрать имя группы (target)
-   * Health check grace period: 60
+   * Health check grace period: 30
    * Maximum capacity: 5
    * Scaling policies: Target tracking, Average CPU
+   * Target value 25
 
-3. Проверить масштабирование под нагрузкой вручную
+3. Найти в созданном Load Balancer его имя DNS и открыть его в браузере
 
 4. Проверить масштабирование под нагрузкой с помощью `stress_test.py`
 
@@ -73,24 +75,33 @@ title: Оглавление
    Скрипт для проверки нагрузки `stress_test.py`:
 
    ```python
-   from urllib import request
-   from time import sleep, strftime
    from threading import Thread
+   from urllib import request
+   from time import sleep
 
-   def test():
-       print('before', strftime('%H:%M:%S'))
-       r = request.urlopen('http://<адрес сервера>/?n=100000000')
-       print('after', strftime('%H:%M:%S'))
 
-   while True:
-       t = Thread(target=test)
-       t.start()
-       sleep(5)
+   load_balancer = 'тут впишите DNS вашего load balancer'
+
+
+   def loader():
+       url = f'http://{load_balancer}/result/?n=10_000_000'
+       while True:
+           try:
+               res = request.urlopen(url)
+           except:
+               pass
+           sleep(1)
+
+
+   if __name__ == '__main__':
+       threads = [Thread(target=loader) for _ in range(10)]
+       for t in threads:
+           t.start()
    ```
 
 ## Литература
 
-1. https://aws.amazon.com/ru/ec2/autoscaling/
-2. https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html
-3. https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html
-4. https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html
+1. [https://aws.amazon.com/ru/ec2/autoscaling/](https://aws.amazon.com/ru/ec2/autoscaling/)
+2. [https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)
+3. [https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html)
+4. [https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html)
