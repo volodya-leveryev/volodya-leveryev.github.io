@@ -105,13 +105,12 @@ title: Введение
   - [Deepin](https://www.deepin.org/en/) — дистрибутив на базе Debian Stable с графическим окружением Deepin;
   - [MX Linux](https://mxlinux.org/) — сбалансированный дистрибутив с графическим окружением Xfce на базе Debian Stable;
   - [antiX](https://antixlinux.com/) — дистрибутив для устаревших компьютеров на базе Debian Stable;
-  - [SteamOS](https://store.steampowered.com/steamos/) — игровой дистрибутив основанный на Debian.
 
 - [RedHat](https://www.redhat.com/en) — американская корпорация, крупный разработчик свободного ПО и одноименное семейство дистрибутивов: 
 
   - [RedHat Enterprise Linux (RHEL)](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/) — серверный дистрибутив с платной поддержкой;
   - [Fedora](https://getfedora.org/) — бесплатный дистрибутив, на котором RedHat обкатывает все новейшие изменения;
-  - [CentOS](https://www.centos.org/) — свободный бесплатный клон RHEL;
+  - [AlmaLinux]() — свободный бесплатный клон RHEL;
   - [Oracle Linux](https://www.oracle.com/linux/) — вариант от Oracle;
   - Amazon Linux — вариант дистрибутива от Amazon.
 
@@ -119,14 +118,19 @@ title: Введение
 
   - [Manjaro](https://manjaro.org/) — вариант дистрибутив ArchLinux с графическим установщиком и рядом всмопогательных утилит.
   - [EndeavourOS](https://endeavouros.com/)
+  - [SteamOS](https://store.steampowered.com/steamos/) — игровой дистрибутив основанный на Debian.
 
 - Другие известные дистрибутивы:
 
+- [SUSE Linux Enterprise Server (SLES)](https://www.suse.com/products/server/) — популярный серверный дистрибутив с платной поддержкой от компании SUSE
+- [openSUSE](https://www.opensuse.org/) — популярный бесплатный дистрибутив от компании SUSE
+
   - [Slackware](https://www.slackware.com/) — олдскульный и простой дистрибутив, поддерживаемый Патриком Фолькердингом
-  - [SUSE Linux Enterprise Server (SLES)](https://www.suse.com/products/server/) — популярный серверный дистрибутив с платной поддержкой от компании SUSE
-  - [openSUSE](https://www.opensuse.org/) — популярный бесплатный дистрибутив от компании SUSE
+
   - [Gentoo](https://www.gentoo.org/) — дистрибутив использующий установку ПО из исходных кодов.
+
   - [Solus](https://getsol.us/home/) — дистрибутив с графическим окружением Budgie.
+
   - [NixOS](https://nixos.org/) — дистрибутив с атомарными обновлениями.
 
 ## Стабильность или новизна?
@@ -167,7 +171,7 @@ title: Введение
 - Семейство Linux (около трети рынка):
 
   - [RedHat Enterprise Linux (RHEL)](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/)
-  - [Community Enterprise OS (CentOS)](https://www.centos.org/)
+  - [AlmaLinux](https://www.centos.org/)
   - [Oracle Linux](https://www.oracle.com/linux/)
   - Amazon Linux
   - [SLES](https://www.suse.com/products/server/)
