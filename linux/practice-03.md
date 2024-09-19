@@ -94,7 +94,7 @@ sudo apt update
 8. Обновить перечень пакетов:
 
     ```
-    suod apt update
+    sudo apt update
     ```
 
 9. Сравнить информацию о пакетах `docker-ce` и `docker`. Сделать скриншот.
