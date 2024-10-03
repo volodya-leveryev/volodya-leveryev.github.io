@@ -34,7 +34,7 @@ title: Работа с пользователями
     sudo useradd <логин>
     sudo cp -r /etc/skel /home/<логин>
     sudo chown -R <логин>:<логин> /home/<логин>
-    sudo chsh -s /bin/bash <login>
+    sudo chsh -s /bin/bash <логин>
     sudo usermod -p <пароль> <логин>
     ```
 
@@ -72,9 +72,9 @@ title: Работа с пользователями
 4. Добавьте пользователя в группу `sudo`.
 
     ```
-    id <login>
-    sudo usermod -a -G sudo <login> 
-    id <login>
+    id <логин>
+    sudo usermod -a -G sudo <логин> 
+    id <логин>
     ```
 
     Снова войдите под новым пользователем и проверьте что команда `sudo` работает.
