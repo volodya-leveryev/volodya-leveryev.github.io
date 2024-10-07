@@ -72,8 +72,7 @@ sudo apt update
 5. Скачать и установить публичный ключ для сверки цифровых подписей репозитория
 
     ```
-    wget https://download.docker.com/linux/ubuntu/gpg -O ~/docker.gpg
-    sudo apt-key add ~/docker.gpg
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
     ```
 
 6. Показать перечень публичных ключей репозиториев. Сделать скриншот
@@ -88,7 +87,9 @@ sudo apt update
     sudo nano /etc/apt/sources.list.d/docker.list
     ```
 
-    Добавить туда строку: `deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable`
+    Добавить туда строку: `deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu focal stable`.
+
+    Если вы работаете на Ubuntu 24.04 вместо `focal` напишите `noble`.
 
 
 8. Обновить перечень пакетов:
