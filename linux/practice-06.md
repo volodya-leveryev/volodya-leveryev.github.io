@@ -52,8 +52,8 @@ title: Работа с дисками
    ```
    sudo parted /dev/vdd
    mklabel gpt
-   mkpart '' 2048s 2099199s
-   mkpart '' 2099200s 8388574s
+   mkpart '' ext2 2048s 2099199s
+   mkpart '' ext3 2099200s 8388574s
    quit
    ```
 
