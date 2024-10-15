@@ -37,9 +37,34 @@
 - копии важных конфигурационных файлов
 
 Создание образа начальной файловой системы (`initrd`, `cpio`, `mkinitrd`, `mkinitramfs`, yaird, mkinitcpio).
-/etc/initramfs-tools/initramfs.conf — конфигурационный файл mkinitramfs
-update-initramfs - скрипт для обновления initrd в дистрибутиве Ubuntu
-Параметры ядра
-Полный список
+`/etc/initramfs-tools/initramfs.conf` — конфигурационный файл `mkinitramfs`.
+`update-initramfs` - скрипт для обновления `initrd` в дистрибутиве Ubuntu.
+
+Параметры ядра ([Полный список](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html)).
+
 Редактирование параметров при загрузке (через загрузчик GRUB).
-Редактирование параметров через sysctl (в рантайме либо через конф.файл /etc/sysctl.conf).
+Редактирование параметров через `sysctl` (в рантайме либо через конф.файл `/etc/sysctl.conf`).
+
+Режимы работы кода:
+- kernel space - у кода есть системные права
+- user space - код запускается с правами пользователя
+
+Система инициализации:
+- Systev V init (sysv init)
+- SystemD (RedHat, Ленарт Поттеринг)
+
+`PID` — номер (идентификатор) процесса.
+
+`PPID` — номер родительского процесса.
+
+## Systemd:
+
+Unit - файл с описанием:
+- службы (service, daemon)
+- целевые состояния системы (target)
+- точки монтирования (mount point)
+- сокеты (socket)
+
+и т.п.
+
+Шаблонный модуль - файл который является шаблоном для запуска однотипных модулей.
