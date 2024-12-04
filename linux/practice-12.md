@@ -15,14 +15,6 @@ title: Работа со службами
 2. Работа с `journalctl`.
 3. Работа со службой `cron`.
 
-## Теоретические основы
-
-`systemctl` 
-
-`journalctl`
-
-`cron`
-
 ## Подготовительный этап
 
 * Ознакомьтесь со [статьей о SystemD](https://habr.com/ru/companies/timeweb/articles/824146/).
