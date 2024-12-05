@@ -71,7 +71,7 @@ title: Работа со службами
     Description=SimpleService
 
     [Service]
-    ExecStart=/usr/bin/python3 -m http.server -d /home/yc-user/www
+    ExecStart=/usr/bin/python3 -m http.server -d /home/yc-user/www 80
 
     [Install]
     WantedBy=default.target
