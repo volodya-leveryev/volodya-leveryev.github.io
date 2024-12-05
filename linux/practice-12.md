@@ -80,7 +80,7 @@ title: Работа со службами
 7.  Прочитайте сведения о новой службе, запустите и проверьте её статус:
 
     ```
-    sudo systemctl daemon-reload app.service
+    sudo systemctl daemon-reload
     sudo systemctl start app.service
     sudo systemctl status app.service
     ```
