@@ -102,7 +102,7 @@ title: Работа со службами
 
 9.  Добавьте в отчет описание следующих команд `systemctl`:
 
-    - `dependencies`
+    - `list-dependencies`
     - `get-default`
     - `list-units`
     - `list-unit-files`
