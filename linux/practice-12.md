@@ -71,7 +71,7 @@ title: Работа со службами
     Description=SimpleService
 
     [Service]
-    ExecStart=/usr/bin/python3 -m http.service -m /home/yc-user/www
+    ExecStart=/usr/bin/python3 -m http.server -d /home/yc-user/www
 
     [Install]
     WantedBy=default.target
@@ -87,14 +87,16 @@ title: Работа со службами
 
     Добавьте скриншот в отчёт.
 
-    Откройте в браузере полученный сайт и добавьте скриншот в отчёт.
+    Откройте в браузере полученный сайт (http://адрес) и добавьте скриншот в отчёт.
 
 
 8.  Включите автоматический перезапуск службы, перезагрузите сервер, подключитесь к нему снова и убедитесь что служба работает.
 
-    `sudo systemctl systemctl enable app.servicec`
-    `sudo systemctl systemctl reboot`
-    `sudo systemctl systemctl status app.servicec`
+    ```
+    sudo systemctl enable app.service
+    sudo systemctl reboot
+    sudo systemctl status app.service
+    ```
 
     Добавьте скриншот в отчёт.
 
