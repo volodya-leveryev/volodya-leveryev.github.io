@@ -59,7 +59,7 @@
 
 # Явный запуск клиента DHCP
 dhclient -v enp0s8
-dhcpcd
+[dhcpcd](https://roy.marples.name/projects/dhcpcd)
 
 ## Настройка DNS
 /etc/resolv.conf — настройка DNS \
@@ -70,7 +70,7 @@ dhcpcd
 
 В некоторых дистрибутивах используется `systemd-resolved`: `resolvectl`
 
-## Настройка сети в Debian
+## [Настройка сети в Debian](https://wiki.debian.org/NetworkConfiguration)
 
 `/etc/network/interfaces` — основной конфигурационный файл службы Networking.
 
@@ -78,7 +78,7 @@ dhcpcd
 
 `sudo systemctl restart networking`
 
-## Настройка сети в Ubuntu Server
+## [Настройка сети в Ubuntu Server](https://ubuntu.com/server/docs/network-configuration)
 В Ubuntu Server одновременно применяется:
 - Конфигурационный файл в стиле Debian
 - Менеджер сетевых настроек Netplan
@@ -91,7 +91,7 @@ dhcpcd
 `sudo netplan try` - попробовать настройку, если не получилось - откат \
 `sudo netplan ip leases enp0s8` - просмотр аренды
 
-## Настройка сети в RedHat
+## [Настройка сети в RedHat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/s1-networkscripts-interfaces)
 
 Дистрибутивы RedHat (RHEL, CentOS, Fedora) используют:
 - классические конфигурационные файлы
@@ -109,17 +109,15 @@ dhcpcd
 
 Менеджеры настроек сети как правило проверяют настройки в конфигурационных файлах и не управляют сетевыми интерфейсами которые настроены с их помощью.
 
-`Netplan` — разработан в Canonical и применяется в Ubuntu.
-`Network Manager` — часто применяется в десктопных дистрибутивах Linux и дистрибутивах на базе RedHat.
-
-`systemd-resolved` — часть проекта Systemd для управления разрешением DNS-имен.
-
-`systemd-networkd` — часть проекта Systemd для управления настройками сети.
+- [`Netplan`](https://netplan.io/) — разработан в Canonical и применяется в Ubuntu. \
+- [`Network Manager`](https://wiki.gnome.org/Projects/NetworkManager) — часто применяется в десктопных дистрибутивах Linux и дистрибутивах на базе RedHat.
+- [`systemd-resolved`](https://www.freedesktop.org/software/systemd/man/resolvectl.html) — часть проекта Systemd для управления разрешением DNS-имен.
+- [`systemd-networkd`](https://www.freedesktop.org/software/systemd/man/systemd.network.html) — часть проекта Systemd для управления настройками сети.
 
 Менее популярные:
-- ConnMan
-- netctl
-- wicd
+- [ConnMan](https://01.org/connman)
+- [netctl](http://www.cbs.dtu.dk/services/NetCTL/)
+- [wicd](http://wicd.sourceforge.net/)
 
 ## Примечания
 `SCTP` — Stream Control Transmission Protocol, современный протокол транспортного уровня (4 уровень модели OSI), который в будущем возможно заменит TCP и UDP.
@@ -137,4 +135,4 @@ export FTP_PROXY=ftp://192.168.1.42:3128
 export SOCKS_PROXY=???://192.168.1.42:9050
 ```
 
-В качестве сетевого экрана в Linux применяется модуль ядра `NetFilter` и различные фронтенды (`iptables`, `firewall-cmd`, `ufw` и т.п.), которые позволяют его конфигурировать.
+В качестве сетевого экрана в Linux применяется модуль ядра [`NetFilter`](https://en.wikipedia.org/wiki/Netfilter) и различные фронтенды ([`iptables`](https://ru.wikibooks.org/wiki/Iptables), [`firewall-cmd`](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-8-ru), [`ufw`](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04-ru) и т.п.), которые позволяют его конфигурировать.
