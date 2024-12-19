@@ -24,7 +24,7 @@ title: ОС Linux
 * [Практика 9. Работа с Docker Compose](practice-09)
 * [Практика 10. LVM - Logical Volume Manager](practice-10)
 * [Практика 11. Скрипты и утилиты](practice-11)
-
+* [Практика 12. Работа со службами](practice-12)
 
 ## Дополнительная инфорация
 
