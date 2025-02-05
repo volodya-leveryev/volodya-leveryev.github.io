@@ -14,7 +14,6 @@
 - [OVH](https://www.ovhcloud.com/)
 - [Tencent Cloud](https://www.tencentcloud.com/)
 - [Linode (подразделение Akamai)](https://www.linode.com/)
-...
 
 Российские облачные провайдеры:
 - [Yandex Cloud](https://cloud.yandex.ru)
