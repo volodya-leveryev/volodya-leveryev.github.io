@@ -1,9 +1,8 @@
 ---
 layout: default
-title: Оглавление
+title: Лаб. работа 4 — AWS EC2 Auto Scaling
 ---
-
-# AWS EC2 Auto Scaling
+# Лаб. работа 4 — AWS EC2 Auto Scaling
 
 ## Теория
 
@@ -34,7 +33,7 @@ title: Оглавление
 * нужен ли балансировщик нагрузки
 
 <div style="text-align:center">
-<img src="aws_autoscale.png" alt="aws_autoscale" width="75%"/>
+<img src="lab4_ec2_auto_scaling.png" alt="AWS EC2 Auto Scaling" width="75%"/>
 </div>
 
 ## Подготовительные шаги
