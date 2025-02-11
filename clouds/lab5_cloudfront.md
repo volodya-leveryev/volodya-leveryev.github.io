@@ -10,7 +10,7 @@ title: Оглавление
 AWS CloudFront — это CDN (Content Delivery Network) облачного провайдера AWS. Он позволяет ускорить доступ к файлам через Интернет. Работает с помощью кеширования файлов на серверах в точках присутствия (Point of Presence — POP) которые которые расположены близко к клиентам.
 
 <div style="text-align:center">
-<img src="aws_cloudfront.png" alt="aws_cloudfront" width="75%"/>
+<img src="lab5_cloudfront.png" alt="aws_cloudfront" width="75%"/>
 </div>
 
 Этот сервис не привязан к конкретному региону и всегда базируется в первом по счету регионе: `us-east-1`.
@@ -44,7 +44,7 @@ AWS CloudFront — это CDN (Content Delivery Network) облачного пр
 
    и сохраните его в файле `index.html`.
 
-2. Откройте [YouTube](https://youtube.com/) и найдите ролик длительностью от 10 до 20 минут.
+2. Откройте [RuTube](https://rutube.ru/) и найдите ролик длительностью 2-5 минут.
 
 
 ## Практика
