@@ -101,7 +101,7 @@ dnssec-validation no;
 
 добавить ссылку на описание доменной зоны:
 ```
-sudo nano named.conf.zones
+sudo nano named.conf.default-zones
 ```
 ```
 zone "example.com" {
@@ -112,7 +112,7 @@ zone "example.com" {
 
 Добавить ресурсные записи DNS:
 ```
-sudo cp db.localhost db.example.com
+sudo cp db.local db.example.com
 sudo nano db.example.com
 ```
 ```
