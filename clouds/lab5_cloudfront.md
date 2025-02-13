@@ -32,10 +32,16 @@ AWS CloudFront — это CDN (Content Delivery Network) облачного пр
 1. Создайте в текстовом редакторе файл:
 
    ```
-   <html>
+   <!DOCTYPE html>
+   <html lang="ru">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+   </head>
    <body>
-   <video width="1920" height="1080" controls>
-       <source src="clip.mp4" type="video/mp4">
+   <video width="1280" height="720" controls>
+       <source src="clip.webm" type="video/webm">
        Your browser does not support the video tag.
    </video>
    </body>
@@ -44,7 +50,7 @@ AWS CloudFront — это CDN (Content Delivery Network) облачного пр
 
    и сохраните его в файле `index.html`.
 
-2. Откройте [RuTube](https://rutube.ru/) и найдите ролик длительностью 2-5 минут.
+2. Откройте [Vk Видео](https://vkvideo.ru/) и найдите ролик длительностью 2-5 минут.
 
 
 ## Практика
@@ -77,13 +83,14 @@ AWS CloudFront — это CDN (Content Delivery Network) облачного пр
 
    ```cmd
    pip3 install yt-dlp
-   yt-dlp -f 137 -o "clip.mp4" "<ссылка на ролик>"
+   yt-dlp -F "<ссылка на ролик>"
+   yt-dlp -f dash_webm-4 -o "clip.webm" "<ссылка на ролик>"
    ```
 
 8. Загрузите ролик в бакет:
 
    ```cmd
-   aws s3 cp clip.mp4 s3://<группа>-<фамилия>/
+   aws s3 cp clip.webm s3://<группа>-<фамилия>/
    ```
 
 9. Закройте CloudShell и вернитесь в веб-консоль.
@@ -111,7 +118,7 @@ AWS CloudFront — это CDN (Content Delivery Network) облачного пр
 14. Откройте `Git Bash` и выполните команду:
 
     ```
-    curl -v <URL файла clip.mp4 с S3> -o clip.mp4
+    curl -v <URL файла clip.webm с S3> -o clip.webm
     ```
 
     Обратите внимание на скорость скачивания.
@@ -121,7 +128,7 @@ AWS CloudFront — это CDN (Content Delivery Network) облачного пр
 15. Откройте новое окно `Git Bash`. Несколько раз выполните команду (используйте `http`-вариант ссылки)
 
     ```
-    curl -v <URL файла clip.mp4 с CloudFront> -o clip.mp4
+    curl -v <URL файла clip.webm с CloudFront> -o clip.webm
     ```
 
     Когда заголовок `X-Cache` изменится на `Hit from cloudfront` остановите попытки.
