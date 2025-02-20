@@ -20,5 +20,6 @@ title: Оглавление
 * [Облачная инфраструктура](./theory_infrastructure)
 * [Обзор провайдеров облачных услуг](./theory_providers)
 * [Обзор облачных сервисов](./provider_services)
+* [Amazon EC2](./theory_aws_ec2)
 * [AWS Costs](theory_aws_costs)
 * [AWS VPC](theory_aws_vpc)
