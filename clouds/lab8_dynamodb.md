@@ -231,25 +231,25 @@ def index_page():
       <form>
         <div class="mb-3">
           <label for="q" class="form-label">Фильтр</label>
-          <input type="text" name="q" id="q" class="form-control" value="\{\{ substring \}\}">
+          <input type="text" name="q" id="q" class="form-control" value="&#123;&#123; substring &#125;&#125;">
         </div>
       </form>
     </div>
   </div>
   <div class="row row-cols-1 row-cols-md-4">
-    \{\% for item in movies \%\}
+    &#123;&#37; for item in movies &#37;&#125;
     <div class="col">
       <div class="card">
-        <img src="\{\{ item['Poster']['S'] \}\}" class="card-img-top" alt="...">
+        <img src="&#123;&#123; item['Poster']['S'] &#125;&#125;" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">\{\{ item['Title']['S'] \}\}</h5>
+          <h5 class="card-title">&#123;&#123; item['Title']['S'] &#125;&#125;</h5>
           <p class="card-text">
             Добавьте сюда описание фильма
           </p>
         </div>
       </div>
     </div>
-    \{\% endfor \%\}
+    &#123;&#37; endfor &#37;&#125;
   </div>
 </div>
 </body>
