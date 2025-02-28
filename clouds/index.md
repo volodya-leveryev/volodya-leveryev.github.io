@@ -15,6 +15,7 @@ title: Оглавление
 5. [Amazon Cloudfront](./lab5_cloudfront)
 6. [AWS Elastic Beanstalk](./lab6_beanstalk)
 7. [Amazon RDS](./lab7_rds)
+7. [Amazon DynamoDB](./lab8_dynamodb)
 
 **Теория**
 
