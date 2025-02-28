@@ -59,7 +59,7 @@ title: Оглавление
 
 Перед началом работы войдите в [веб-консоль](https://console.aws.amazon.com/)
 
-1. Откройте сервис RDS, нажмите **Create database**
+1. Откройте сервис RDS (в регионе Hong Kong, Seoul или Tokyo), нажмите **Create database**
 
    * Engine type: MySQL
    * Template: Free tier
@@ -69,7 +69,7 @@ title: Оглавление
 
    Оставьте остальные параметры по умолчанию и нажмите **Create database**.
 
-2. Откройте сервис EC2 и нажмите **Launch instance**
+2. Откройте в том же регионе сервис EC2 и нажмите **Launch instance**
 
    * Name: <группа>-<фамилия>
    * Amazon Machine Image: Ubuntu Server 24.04 LTS
@@ -124,7 +124,7 @@ title: Оглавление
    
    проверьте что NPM установился: `npm -v`
 
-9. Создайте проект `books` на базе CMS Strapi (введите параметры БД MySQL, остальные параметры оставьте по умолчанию):
+9. Создайте проект `books` на базе CMS Strapi (вместо sqlite выберите mysql, ведите параметры созданной БД, остальные параметры оставьте по умолчанию):
 
    ```
    npx create-strapi-app@latest --skip-cloud --no-example --no-git-init books
@@ -158,7 +158,7 @@ title: Оглавление
 
 13. Перейдите в **Settings**, **API Tokens**, откройте токен с полными правами, заново сгенерируйте и скопируйте его.
 
-14. Откройте клиент для REST API [httpie](https://httpie.io/app), на вкладке **Auth** выберите вариант аутентификации **Token Bearer** и выполните запрос:
+14. Откройте клиент для REST API [httpie](https://httpie.io/), перейдите в приложение (Go to App), на вкладке **Auth** выберите вариант аутентификации **Token Bearer** и выполните запрос:
 
     * GET http://<IP-адрес сервера>:8080/api/books
 
