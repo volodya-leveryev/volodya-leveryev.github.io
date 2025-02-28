@@ -74,17 +74,15 @@ SDK AWS для Python называется [Boto3](https://pypi.org/project/boto
 
 12. Создайте файлы `app.py` и `templates\index.html`.
 
-13. Изучите исходный код в скрипте `app.py` и [документацию Boto3 DynamoDB](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html). Внесите изменения, чтобы скрипт:
-    * читал строки с помощью `scan()`
-    * накладывал фильтр на строки с помощью метода `query()`
+13. Изучите исходный код в скрипте `app.py` и [документацию Boto3 DynamoDB](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html). Внесите изменения, чтобы скрипт получил данных о фильмах с помощью метода `scan()`.
 
-14. Запустите приложение на Flask:
+14. Запустите приложение на Flask и проверьте его работу в браузере:
 
     ```cmd
     flask run
     ```
 
-15. Проверьте работу приложения в браузере.
+15. *Доп.задание:* реализуйте возможность получения списка фильмов фильтром по части его названия.
 
 16. *Доп.задание:* реализуйте возможность просмотра карточки фильма с помощью метода `get_item()`.
 
@@ -118,8 +116,8 @@ def load_data():
         reader = DictReader(f, delimiter=',', quotechar='"')
         rows = [row for row in reader]
 
-    # Выводим для проверки первые 5 строк
-    pprint(rows[:5])
+    # Диагностический вывод прочитанных данных
+    # pprint(rows[:3])
     return rows
 
 
@@ -166,7 +164,7 @@ def main():
             'Gross': prepare_numeric(row.get('Gross')),
         }
 
-        # напишите здесь вызов метода put_item() для загрузки нового элемента
+        # Используйте метод put_item() для загрузки нового элемента
 
         print(f'\r{key:3d}/{N} rows loaded', end='')
 
@@ -201,7 +199,7 @@ def index_page():
     substring = request.args.get('q', '')
     movies = []
 
-    # Здесь опишите получение данных из DynamoDB
+    # Используйте методы scan() и query() для получения данных
 
     return render_template('index.html',
                            movies=movies,
