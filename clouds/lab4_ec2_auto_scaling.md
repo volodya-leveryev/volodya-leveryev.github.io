@@ -38,7 +38,7 @@ title: Лаб. работа 4 — AWS EC2 Auto Scaling
 
 ## Подготовительные шаги
 
-1. Войти в AWS Console
+1. Войти в AWS Console, выбрать регион Tokyo (ap-northeast-1), открыть сервис EC2 (Elastic Compute Cloud)
 
 2. Найти образ инстанса (AMI) в разделе `EC2 \ Images \ AMIs`
 
