@@ -58,7 +58,7 @@ AWS Lambda часто применяется для задач ETL (Extract, Tra
 
 1. Войдите в веб-консоль AWS.
 
-2. Перейти в сервис Lambda в регион Tokyo (ap-northeast-1).
+2. Откройте сервис Lambda в регионе Tokyo (ap-northeast-1).
 
 3. Создайте функцию:
     * Author from scratch
