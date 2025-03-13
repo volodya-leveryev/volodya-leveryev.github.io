@@ -17,6 +17,7 @@ title: Оглавление
 7. [Amazon RDS](./lab7_rds)
 8. [Amazon DynamoDB](./lab8_dynamodb)
 9. [AWS Lambda](./lab9_lambda)
+10. [AWS Fargate](./lab10_fargate)
 
 **Теория**
 
