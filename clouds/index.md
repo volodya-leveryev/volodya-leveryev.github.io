@@ -18,6 +18,7 @@ title: Оглавление
 8. [Amazon DynamoDB](./lab8_dynamodb)
 9. [AWS Lambda](./lab9_lambda)
 10. [AWS Fargate](./lab10_fargate)
+11. [Terraform](./lab11_terraform)
 
 **Теория**
 
