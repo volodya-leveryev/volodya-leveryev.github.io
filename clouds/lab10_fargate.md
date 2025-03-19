@@ -78,7 +78,7 @@ Elastic Container Registry (ECR) — сервис для хранения обр
 
     * Task definition family: <группа>-<фамилия>
     * Container, Name: <группа>-<фамилия>
-    * Container, Image URI: <URI репозитория в ECR>
+    * Container, Image URI: {% raw %}<URI репозитория в ECR>{% endraw %}
     * Container, Port name: 80
     * Оставьте значение других параметров по умолчанию.
 
