@@ -19,6 +19,7 @@ title: Оглавление
 9. [AWS Lambda](./lab9_lambda)
 10. [AWS Fargate](./lab10_fargate)
 11. [Terraform](./lab11_terraform)
+12. [Step functions](./lab12_step_functions)
 
 **Теория**
 
