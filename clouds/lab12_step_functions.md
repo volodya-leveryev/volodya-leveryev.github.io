@@ -85,7 +85,7 @@
     "Save to S3": {
       "Type": "Task",
       "Resource": "arn:aws:states:::aws-sdk:s3:putObject",
-      "Parameters": {
+      "Arguments": {
         "Bucket": "<Имя созданного бакета>",
         "Key": "{% $states.context.Execution.StartTime & '.json' %}",
         "Body": "{% $form %}"
