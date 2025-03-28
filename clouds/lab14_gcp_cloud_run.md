@@ -263,7 +263,7 @@ web: gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
     git remote add origin <https-ссылка на репозиторий>
     ```
 
-22. Создайте персональный токен доступа (classic) для GitHub по инструкции и используйте его в дальнейшем как пароль для git в командной строке.
+22. Создайте персональный токен доступа (classic) для GitHub по [инструкции](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) (с правом доступа к репозиториям) и используйте его в дальнейшем как пароль для git в командной строке.
 
 23. Отправьте изменения в центральный репозиторий (используйте имя пользователя в GitHub и ранее созданный персональный токен доступа):
     ```cmd
@@ -272,7 +272,7 @@ web: gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
 
 24. Откройте в консоли GCP сервис Cloud Run.
 
-25. Нажмите кнопку "CREATE SERVICE" для начала создания сервиса.
+25. Нажмите кнопку "DEPLOY CONTAINER → SERVICE" для начала создания сервиса.
 
 26. Выберите вариант "Continuously deploy from a repository" с логотипом GitHub. Нажмите кнопку "SET UP WITH CLOUD BUILD".
 
