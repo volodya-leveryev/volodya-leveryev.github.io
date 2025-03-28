@@ -20,8 +20,8 @@ title: Оглавление
 10. [AWS Fargate](./lab10_fargate)
 11. [Terraform](./lab11_terraform)
 12. [Step functions](./lab12_step_functions)
-13. [Основы работы в GCP](./lab12_step_functions)
-14. [Google Cloud Run](./lab12_step_functions)
+13. [Основы работы в GCP](./lab13_gcp)
+14. [Google Cloud Run](./lab14_gcp_cloud_run)
 
 **Теория**
 
