@@ -87,9 +87,9 @@ Google Cloud Platform (GCP) использует систему аутентиф
 
 14. Откройте в браузере внешний IP-адрес VM (его можно найти в списке инстансов) и убедитесь, что отображается стартовая страница Nginx.
 
-15. Вернитесь в терминал и создайте файл `index.html`:
+15. Вернитесь в терминал и создайте файл `index.html` с произвольным сообщением:
     ```sh
-    echo "<h1>Лабораторная работа GCP</h1>" > index.html
+    echo "Hello World!" index.html
     ```
 
 16. Запустите встроенный HTTP-сервер Python на порту **8080**:
@@ -101,48 +101,35 @@ Google Cloud Platform (GCP) использует систему аутентиф
 
 18. В разделе **Network interfaces → Firewalls → Network tags** добавьте тег `http-server-8080` и нажмите кнопку **Save**.
 
-19. В браузере откройте адрес `http://[EXTERNAL_IP]:8080`. Должен отобразиться ваш `index.html` с текстом `"Лабораторная работа GCP"`.
+19. В браузере откройте адрес `http://[EXTERNAL_IP]:8080`. Должен отобразиться ваш `index.html` с текстом сообщения.
 
-**Шаг 3. Работа с интерфейсом командной строки**
-
-
-
-**Шаг 4. Создание облачного хранилища файлов**
+**Шаг 3. Создание облачного хранилища файлов**
 
 1. В меню слева выберите **Cloud Storage → Buckets**.
 2. Нажмите **"Create bucket"** (Создать бакет).
-3. В разделе **Get Started** введите уникальное имя бакета: `<Группа>-<Фамилия>`.
-4. В разделе **Choose where to store your data** выберите:
-    - **Location type**: `Region`
-    - **Location**: `europe-north1`
-5. В разделе **Choose a storage class for your data** оставьте **Standard** (по умолчанию).
-6. В разделе **Choose how to control access to objects** отключите галочку **Enforce public access prevention on this bucket** и оставьте **Access control** в режиме **Uniform** (по умолчанию).
-7. Нажмите **"Create"**, чтобы создать бакет.
-8. На локальном компьютере создайте файл `index.html` с произвольным содержимым.
-9. Нажмите **"Upload → Upload Files"** и загрузите созданный файл.
+    * В разделе **Get Started** введите уникальное имя бакета: `<Группа>-<Фамилия>`.
+    * В разделе **Choose where to store your data** выберите:
+        - **Location type**: `Region`
+        - **Location**: `europe-north1`
+    * В разделе **Choose a storage class for your data** оставьте **Standard** (по умолчанию).
+    * В разделе **Choose how to control access to objects** отключите галочку **Enforce public access prevention on this bucket** и оставьте **Access control** в режиме **Uniform** (по умолчанию).
 
-**Шаг 5. Включение статического веб-хостинга**
+3. Нажмите **"Create"**, чтобы создать бакет.
+4. На локальном компьютере создайте файл `index.html` с произвольным содержимым.
+5. Нажмите **"Upload → Upload Files"** и загрузите созданный файл.
 
-**3. Загрузка статических файлов**
-1. В консоли Cloud Storage откройте созданный бакет.
-, например:
-   ```html
-   <h1>Привет, GCP!</h1>
-   ```
-   (Сохраните файл как `index.html` и загрузите его).
+**Шаг 4. Включение статического веб-хостинга**
 
-1. В разделе **Settings** (Настройки) выберите вкладку **"Website configuration"**.
-2. В поле **Main Page (Index document)** введите:
-   ```
-   index.html
-   ```
-3. Нажмите **"Save"**.
+1. В списке бакетов на строке с вашим бакетом нажмите кнопку `⋮` и выберите **"Edit website configuration"**, в поле **Index (main) page suffix** введите `index.html` и нажмите **"Save"**.
+2. Откройте ваш бакет, перейдите во вкладку **"Permissions"**, в разделе **View by principals** нажмите **"Grant Access"**.
 
-1. В консоли Cloud Storage перейдите во вкладку **"Permissions"**.
-2. Нажмите **"Grant Access"**.
 3. В поле **New Principals** введите `allUsers`.
 4. В разделе **Role** выберите `Storage Object Viewer`.
 5. Нажмите **"Save"** и подтвердите, что делаете файлы общедоступными.
 
 1. В разделе **"Bucket Details" → "Website configuration"** скопируйте **"Public URL"**.
 2. Откройте URL в браузере и убедитесь, что загружается `index.html`.
+
+**Шаг 5. Работа с интерфейсом командной строки**
+
+Нажмите кнопку  в верхней части веб-консоли.
