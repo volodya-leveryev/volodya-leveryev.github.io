@@ -22,6 +22,7 @@ title: Оглавление
 12. [Step functions](./lab12_step_functions)
 13. [Основы работы в GCP](./lab13_gcp)
 14. [Google Cloud Run](./lab14_gcp_cloud_run)
+15. [GitHub Pages](./lab15_github_pages)
 
 **Теория**
 
