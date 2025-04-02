@@ -104,7 +104,9 @@ Cloud Run тесно интегрируется с другими сервиса
     ```
 
 21. Выберите регион для развертывания:\
-    REGION="europe-north1"
+    ```cmd
+    REGION=europe-north1
+    ```
 
 22. Запустите развертывание:
     ```cmd
@@ -282,7 +284,7 @@ web: gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
 
 29. Введите в качестве имени сервиса свою группу и фамилию.
 
-30. Выберите регион europe-north1.
+30. Выберите регион `europe-north1`.
 
 31. Выберите вариант аутентификации пользователей "Allow unauthenticated invocations".
 
