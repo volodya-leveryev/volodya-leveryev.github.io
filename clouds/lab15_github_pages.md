@@ -132,7 +132,7 @@ jobs:
 ```
 
 ## Ссылки
-- https://docs.github.com/pages
-- https://docs.github.com/actions
-- https://gohugo.io/getting-started/quick-start/
-- https://github.com/marketplace/actions/deploy-to-github-pages
+- [https://docs.github.com/pages](https://docs.github.com/pages)
+- [https://docs.github.com/actions](https://docs.github.com/actions)
+- [https://gohugo.io/getting-started/quick-start/](https://gohugo.io/getting-started/quick-start/)
+- [https://github.com/marketplace/actions/deploy-to-github-pages](https://github.com/marketplace/actions/deploy-to-github-pages)
