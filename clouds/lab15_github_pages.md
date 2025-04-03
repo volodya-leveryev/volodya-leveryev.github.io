@@ -73,6 +73,7 @@
 ## Приложения
 **./github/workflows/pages.yml:**
 ```yaml
+{% raw %}
 name: Deploy Hugo site to Pages
 
 on:
@@ -129,6 +130,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+{% endraw %}
 ```
 
 ## Ссылки
