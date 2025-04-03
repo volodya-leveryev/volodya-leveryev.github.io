@@ -120,11 +120,11 @@ jobs:
           path: ./public
 
   deploy:
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
@@ -135,4 +135,6 @@ jobs:
 - [https://docs.github.com/pages](https://docs.github.com/pages)
 - [https://docs.github.com/actions](https://docs.github.com/actions)
 - [https://gohugo.io/getting-started/quick-start/](https://gohugo.io/getting-started/quick-start/)
-- [https://github.com/marketplace/actions/deploy-to-github-pages](https://github.com/marketplace/actions/deploy-to-github-pages)
+- [https://github.com/actions/configure-pages](https://github.com/actions/configure-pages)
+- [https://github.com/actions/upload-pages-artifact](https://github.com/actions/upload-pages-artifact)
+- [https://github.com/actions/deploy-pages](https://github.com/actions/deploy-pages)
