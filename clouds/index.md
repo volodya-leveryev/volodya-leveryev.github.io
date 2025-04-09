@@ -23,6 +23,7 @@ title: Оглавление
 13. [Основы работы в GCP](./lab13_gcp)
 14. [Google Cloud Run](./lab14_gcp_cloud_run)
 15. [GitHub Pages](./lab15_github_pages)
+16. [Firebase](./lab16_firebase)
 
 **Теория**
 
