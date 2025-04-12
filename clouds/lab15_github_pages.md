@@ -40,8 +40,9 @@
 7. Добавьте тему оформления:
     ```
     git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-    echo "theme = 'ananke'" >> hugo.toml
     ```
+
+    Добавьте в `hugo.toml` строку `theme = 'ananke'`
 
 8. Добавьте три новые страницы о книгах или фильмах, добавьте текст и уберите признак черновика (draft) из front matter:
     ```cmd
@@ -95,7 +96,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: <Текущая версия Hugo>
+      HUGO_VERSION: 0.145.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
