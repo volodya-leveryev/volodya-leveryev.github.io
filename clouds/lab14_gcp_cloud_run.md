@@ -196,13 +196,14 @@ web: gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
 7. Создайте файлы исходного кода приложения:
    ```cmd
    mkdir views
-   touch package.json app.js views/index.pug
+   touch package.json app.js Dockerfile views/index.pug
    ```
 
 8. Откройте файлы в редакторе и вставьте исходный код (текст файлов прилагается ниже):
    ```cmd
    cloudshell edit package.json
    cloudshell edit app.js
+   cloudshell edit Dockerfile
    cloudshell edit views/index.pug
    ```
 
@@ -280,7 +281,7 @@ web: gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
 
 27. При необходимости разрешите доступ Cloud Build к GitHub и выберите созданный ранее репозиторий. Нажмите кнопку "NEXT".
 
-28. Выберите тип сборки с помощью Google Cloud's buildpacks. Нажмите кнопку "SAVE".
+28. Выберите тип сборки с помощью Dockerfile. Нажмите кнопку "SAVE".
 
 29. Введите в качестве имени сервиса свою группу и фамилию.
 
@@ -346,8 +347,8 @@ app.listen(port, async () => {
  },
  "license": "ISC",
  "dependencies": {
-   "express": "^4.19.2",
-   "pug": "^3.0.2"
+   "express": "^5.1",
+   "pug": "^3.0"
  }
 }
 ```
@@ -357,4 +358,13 @@ app.listen(port, async () => {
 html
   body
     h1= message
+```
+
+**Dockerfile**
+```Dockerfile
+FROM node:lts
+COPY . .
+RUN npm ci
+EXPOSE 8080
+CMD npm run start
 ```
