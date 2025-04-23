@@ -24,6 +24,7 @@ title: Оглавление
 14. [Google Cloud Run](./lab14_gcp_cloud_run)
 15. [GitHub Pages](./lab15_github_pages)
 16. [Firebase](./lab16_firebase)
+17. [Colab & HuggingFace](./lab17_machine_learning)
 
 **Теория**
 
