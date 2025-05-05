@@ -323,6 +323,8 @@ title: Оглавление
 - [Intelligent products (Preview)](https://cloud.google.com/solutions/intelligent-products) - Создавайте привлекательный опыт владения продуктом с помощью искусственного интеллекта.
 - [Product Discovery](https://cloud.google.com/solutions/retail-product-discovery) - Качественный поиск в Google и рекомендации по цифровым объектам розничной торговли помогают увеличить конверсию и уменьшить количество отказов от поиска.
 
+- [Краткое описание основных сервисов GCP](https://cloudfresh.com/ru/cloud-blog/21-ynstrument-google-cloud-kratkoe-opysanye/)
+
 ### Yandex
 
 - [DataSphere](https://cloud.yandex.ru/services/datasphere) - Среда ML-разработки полного цикла
