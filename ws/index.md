@@ -5,8 +5,9 @@ title: Оглавление
 
 # Веб-сервисы и микросервисная архитектура
 
-## Лабораторные работы:
+[Назад](../)
 
+**Лабораторные работы:**
 1. [Инструменты HTTP](https://docs.google.com/document/d/1NTNp2U2Hi7TrVPSBazMY0OCFCAjfpmVqAO6bPza6R8A/)
 2. [Авторизация клиента API с помощью API Key](https://docs.google.com/document/d/1i9ehIS3sQNBZTiSmmtcqdNeNrgx5YzpBCYD2d4zKm6A/)
 3. [Авторизация клиента API с помощью OAuth](https://docs.google.com/document/d/15pWmrq47UG3i54gVgZu8HMgGHFOj6o_IVxchkeSKCdk/)
@@ -18,6 +19,7 @@ title: Оглавление
 9. [Очередь сообщений Celery](https://docs.google.com/document/d/16xMIiUnIp-CcZogN74SKS0SSQQd7BFfW3LLo8nR_01k/)
 10. [Очередь сообщений RabbitMQ + WebSocket](https://docs.google.com/document/d/1lhQVOeO-j_jypTas_b-s9ezERe2GbbjO_010iaKReCc/)
 11. [Взаимодействие API](https://docs.google.com/document/d/1M_C45CWlQuuEum1cAPHj6WbvcquKxIPaAfLfu6Vv_jQ/)
+12. [Архитектура Pub/Sub](https://docs.google.com/document/d/1rCaLa0fWx5hfg0_i3fXifDyZoq9qk_FWkoAqSu4k-lM/)
 
 <!-- [Тема 1. Протокол HTTP и инструментарий](01_http) -->
 <!-- [Тема 2. Django REST Framework](02_django) -->
