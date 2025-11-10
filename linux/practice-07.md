@@ -20,14 +20,19 @@ title: Установка и настройка веб-серверов
 
 ## Подготовительный этап
 
-- Отредактируйте на локальном компьютере файл `C:\Windows\System32\Drivers\etc\hosts` (для редактирования нужны права администратора, пароль администратора: «имикиц428»). В этот файл нужно поместить строки вида:
+- На локальном компьютере отредактируйте файл `C:\Windows\System32\Drivers\etc\hosts` (для редактирования нужны права администратора, пароль администратора: «имикиц428»). В этот файл нужно добавить строки вида:
 
   ```
   <IP-адрес сервера> test1.example.com
   <IP-адрес сервера> test2.example.com
   ```
 
-- Добавьте аналогичные строки в файл `/etc/hosts` на сервере.
+- На сервере добавьте в файл `/etc/hosts` строки.
+
+  ```
+  127.0.0.1 test1.example.com
+  127.0.0.1 test2.example.com
+  ```
 
 - Создать отчет о выполнении лабораторной работы в формате *.docx.
 
@@ -97,9 +102,11 @@ title: Установка и настройка веб-серверов
 
 7. Установите необходимые пакеты: `nginx` и `php-fpm`.
 
+8. Отредактируйте файл `/etc/nginx/sites-available/default`. Найдите строку `index index.html index.htm index.nginx-debian.html;` и уберите из неё значение `index.html`. Перезапустите nginx (`sudo systemctl restart nginx`).
+
    Откройте в браузере хост-компьютера адреса [http://test1.example.com](http://test1.example.com), [http://test1.example.com:8080](http://test1.example.com:8080) и [http://test2.example.com:8080](http://test2.example.com:8080), убедитесь, что веб-серверы Apache HTTPd и Nginx работают. **Сделайте скриншот с Nginx.**
 
-8. Добавьте файл `newsite` в каталог `/etc/nginx/sites-available/`:
+9. Добавьте файл `newsite` в каталог `/etc/nginx/sites-available/`:
 
    ```
    server {
@@ -117,13 +124,13 @@ title: Установка и настройка веб-серверов
        }
        location ~ \.php$ {
            include snippets/fastcgi-php.conf;
-           fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;  # Перепроверить правильность
+           fastcgi_pass unix:/var/run/php/php-fpm.sock;  # Перепроверить существование этого файла
        }
    }
    ```
 
    Создайте символическую ссылку на файл `/etc/nginx/sites-available/newsite` в каталоге `/etc/nginx/sites-enabled` и перезапустите Nginx.
 
-9. Откройте в браузере хост-компьютера страницы по адресам [http://test1.example.com](http://test1.example.com), [http://test2.example.com](http://test2.example.com), [http://test2.example.com/t1](http://test2.example.com/t1) и [http://test2.example.com/t2](http://test2.example.com/t2), убедитесь, что веб-серверы Apache HTTPd и Nginx работают вместе.
+10. Откройте в браузере хост-компьютера страницы по адресам [http://test1.example.com](http://test1.example.com), [http://test2.example.com](http://test2.example.com), [http://test2.example.com/t1](http://test2.example.com/t1) и [http://test2.example.com/t2](http://test2.example.com/t2), убедитесь, что веб-серверы Apache HTTPd и Nginx работают вместе.
 
    Откройте в браузере отладчик (Ctrl+Shift+C или F12) на вкладке Network и найдите заголовок `Server` и убедитесь что указан веб-сервер Nginx. **Сделайте скриншоты всех 4 сайтов.**
