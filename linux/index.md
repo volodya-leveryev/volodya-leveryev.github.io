@@ -11,6 +11,7 @@ title: ОС Linux
 * [Лекция: Работа с файлами](lecture-02-files)
 * [Лекция: Работа с пользователями](lecture-03-users)
 * [Лекция: Скрипты Bash](lecture-scripts)
+* [Лекция: Модули ядра](lecture-modules)
 
 ## Лабораторные занятия
 
