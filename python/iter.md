@@ -74,7 +74,7 @@ print(next(it))
 
 ## Генераторы
 
-```python
+<pre><code class="language-python">
 def simple_generator(n):
     i = 0
     while i < n:
@@ -91,11 +91,11 @@ for number in gen:
     # Ручное прерывание цикла
     if number > 10:
         break
-```
+</code></pre>
 
 ## Генераторные выражения
 
-```python
+<pre><code class="language-python">
 # Список потребляет память и сразу вычисляет значения
 squares_list = [i * i for i in range(5)]
 
@@ -105,11 +105,11 @@ squares_generator = (i * i for i in range(5))
 # Генераторное выражение вычисляет значения по мере необходимости
 for square in squares_generator:
     print(square)
-```
+</code></pre>
 
 ## Функция `enumerate()`
 
-```python
+<pre><code class="language-python">
 fruits = ['apple', 'banana', 'cherry']
 
 for index, fruit in enumerate(fruits):
@@ -119,9 +119,9 @@ for index, fruit in enumerate(fruits):
 # Index 0: apple
 # Index 1: banana
 # Index 2: cherry
-```
+</code></pre>
 
-```python
+<pre><code class="language-python">
 names = ["Alice", "Bob", "Charlie"]
 
 # можно начать отсчёт не с нуля
@@ -132,11 +132,11 @@ for count, name in enumerate(names, start=1):
 # Student ID 1: Alice
 # Student ID 2: Bob
 # Student ID 3: Charlie
-```
+</code></pre>
 
 ## Функция `zip()`
 
-```python
+<pre><code class="language-python">
 names = ["Alice", "Bob", "Charlie"]
 scores = [85, 90, 88]
 
@@ -145,9 +145,9 @@ print(list(zipped_data))
 
 # Результат:
 # [('Alice', 85), ('Bob', 90), ('Charlie', 88)]
-```
+</code></pre>
 
-```python
+<pre><code class="language-python">
 names = ["Alice", "Bob", "Charlie"]
 ages = [25, 30, 28]
 cities = ("New York", "London", "Paris")
@@ -158,9 +158,9 @@ print(list(zipped_data))
 
 # Результат:
 # [('Alice', 25, 'New York'), ('Bob', 30, 'London'), ('Charlie', 28, 'Paris')]
-```
+</code></pre>
 
-```python
+<pre><code class="language-python">
 zipped_list = [('Alice', 85), ('Bob', 90), ('Charlie', 88)]
 
 # Можно распаковать аргументы из коллекции
@@ -171,7 +171,7 @@ print("Scores:", scores)
 # Результат:
 # Names: ('Alice', 'Bob', 'Charlie')
 # Scores: (85, 90, 88)
-```
+</code></pre>
 
 ## Пакет `itertools`
 
@@ -181,7 +181,7 @@ print("Scores:", scores)
 - `cycle(iterable)` Бесконечно повторяет элементы переданного итерируемого объекта.
 - `repeat(object, times=None)` Повторяет один и тот же объект указанное число раз или бесконечно.
 
-```python
+<pre><code class="language-python">
 import itertools
 
 counter1 = itertools.count()
@@ -208,7 +208,7 @@ for item in repeated_string:
 repeated_number = itertools.repeat(42)
 for i in range(5):
     print(next(repeated_number)) # Результат: 42, 42, 42, 42, 42
-```
+</code></pre>
 
 **Итераторы, объединяющие последовательности**
 
@@ -216,7 +216,7 @@ for i in range(5):
 - `chain.from_iterable(iterable_of_iterables)` То же, но принимает один итерируемый объект, содержащий другие.
 - `zip_longest(*iterables, fillvalue=None)` Аналог встроенного zip, но продолжает до самой длинной последовательности, подставляя fillvalue при нехватке элементов.
 
-```python
+<pre><code class="language-python">
 from itertools import chain
 
 list1 = [1, 2, 3]
@@ -249,7 +249,7 @@ print("Result:", list(zipped_longest_default))
 zipped_longest_custom = zip_longest(numbers, letters, symbols, fillvalue='-')
 print("Result:", list(zipped_longest_custom))
 # Result: [(1, 'a', '!'), (2, 'b', '@'), (3, '-', '#'), (4, '-', '$'), ('-', '-', '%')]
-```
+</code></pre>
 
 **Фильтрация и отбор элементов**
 
@@ -261,7 +261,7 @@ print("Result:", list(zipped_longest_custom))
 **Комбинаторика**
 
 - `product(*iterables, repeat=1)` Декартово произведение. Аналог вложенных циклов.
-  ```python
+  <pre><code class="language-python">
   from itertools import product
 
   list1 = [1, 2]
@@ -289,10 +289,10 @@ print("Result:", list(zipped_longest_custom))
   #   ('green', 'M', 'cotton'), ('green', 'M', 'silk'), 
   #   ('green', 'L', 'cotton'), ('green', 'L', 'silk')
   # ]
-  ```
+  </code></pre>
 
 - `permutations(iterable, r=None)` Все перестановки длины r (или длины iterable).
-  ```python
+  <pre><code class="language-python">
   from itertools import permutations
 
   # Перестановки всех элементов коллекции
@@ -328,17 +328,11 @@ print("Result:", list(zipped_longest_custom))
   # ('D', 'A')
   # ('D', 'B')
   # ('D', 'C')
-  ```
+  </code></pre>
 
 - `combinations(iterable, r)` Все сочетания без повторений, порядок не учитывается.
-  ```python
-  # Результат: 
-  ```
 
 - `combinations_with_replacement(iterable, r)` Сочетания с повторениями.
-  ```python
-  # Результат: 
-  ```
 
 **Итераторы, выполняющие преобразования**
 
@@ -346,21 +340,11 @@ print("Result:", list(zipped_longest_custom))
 - `starmap(function, iterable)` Применяет функцию, распаковывая аргументы из каждого элемента (кортежа).
 - `pairwise(iterable)` Пары соседних элементов: (a0, a1), (a1, a2), …
 - `batched(iterable, n)` Разбивает последовательность на чанки длины n.
-```python
-```
-```python
-```
-```python
-```
-```python
-```
 
 **Группировка**
 
 - `groupby(iterable, key=None)` Группирует последовательные элементы по ключу. Работает правильно только на отсортированных данных (по ключу группировки).
 
-```python
-```
 **Рецепты (часто используемые шаблоны использования itertools)**
 
 Не входят в сам модуль, но приводятся в документации как готовые конструкции:
