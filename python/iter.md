@@ -1,3 +1,7 @@
+---
+layout: python
+title: Циклы в Python
+---
 # Циклы в Python
 
 ## Терминология
@@ -14,7 +18,7 @@
 
 ## Итераторы
 
-```python
+<pre><code class="language-python">
 # Объявление
 class MyIterator:
     def __init__(self, limit):
@@ -66,7 +70,7 @@ print(next(it))
 # 0
 # 1
 # 2
-```
+</code></pre>
 
 ## Генераторы
 
@@ -171,7 +175,7 @@ print("Scores:", scores)
 
 ## Пакет `itertools`
 
-### Итераторы, порождающие последовательность
+**Итераторы, порождающие последовательность**
 
 - `count(start=0, step=1)` Бесконечная арифметическая прогрессия. Использование: генерация последовательных чисел.
 - `cycle(iterable)` Бесконечно повторяет элементы переданного итерируемого объекта.
@@ -206,7 +210,7 @@ for i in range(5):
     print(next(repeated_number)) # Результат: 42, 42, 42, 42, 42
 ```
 
-### Итераторы, объединяющие последовательности
+**Итераторы, объединяющие последовательности**
 
 - `chain(*iterables)` Итерирует по нескольким последовательностям подряд.
 - `chain.from_iterable(iterable_of_iterables)` То же, но принимает один итерируемый объект, содержащий другие.
@@ -247,32 +251,117 @@ print("Result:", list(zipped_longest_custom))
 # Result: [(1, 'a', '!'), (2, 'b', '@'), (3, '-', '#'), (4, '-', '$'), ('-', '-', '%')]
 ```
 
-### Фильтрация и отбор элементов
+**Фильтрация и отбор элементов**
 
 - `filterfalse(predicate, iterable)` Выбирает элементы, для которых predicate возвращает False.
 - `dropwhile(predicate, iterable)` Отбрасывает элементы, пока predicate возвращает True, затем выдаёт все остальные.
 - `takewhile(predicate, iterable)` Выдаёт элементы, пока predicate возвращает True, затем останавливается.
 - `compress(data, selectors)` Фильтрует data по булевым значениям в selectors.
 
-### Комбинаторика
+**Комбинаторика**
 
 - `product(*iterables, repeat=1)` Декартово произведение. Аналог вложенных циклов.
-- `permutations(iterable, r=None)` Все перестановки длины r (или длины iterable).
-- `combinations(iterable, r)` Все сочетания без повторений, порядок не учитывается.
-- `combinations_with_replacement(iterable, r)` Сочетания с повторениями.
+  ```python
+  from itertools import product
 
-### Итераторы, выполняющие преобразования
+  list1 = [1, 2]
+  list2 = ['a', 'b']
+
+  cartesian_product = list(product(list1, list2))
+  print(cartesian_product)
+  # Результат: [(1, 'a'), (1, 'b'), (2, 'a'), (2, 'b')]
+
+  repeated_product = list(product(numbers, repeat=2))
+  print(repeated_product)
+  # Результат: [(1, 1), (1, 2), (2, 1), (2, 2)]
+
+  colors = ['red', 'green']
+  sizes = ['S', 'M', 'L']
+  materials = ['cotton', 'silk']
+
+  all_combinations = list(product(colors, sizes, materials))
+  print(all_combinations)
+  # Результат: [
+  #   ('red', 'S', 'cotton'), ('red', 'S', 'silk'), 
+  #   ('red', 'M', 'cotton'), ('red', 'M', 'silk'), 
+  #   ('red', 'L', 'cotton'), ('red', 'L', 'silk'), 
+  #   ('green', 'S', 'cotton'), ('green', 'S', 'silk'), 
+  #   ('green', 'M', 'cotton'), ('green', 'M', 'silk'), 
+  #   ('green', 'L', 'cotton'), ('green', 'L', 'silk')
+  # ]
+  ```
+
+- `permutations(iterable, r=None)` Все перестановки длины r (или длины iterable).
+  ```python
+  from itertools import permutations
+
+  # Перестановки всех элементов коллекции
+  numbers = [1, 2, 3]
+  all_permutations = permutations(numbers)
+  for p in all_permutations:
+      print(p)
+
+  # Результат: 
+  # (1, 2, 3)
+  # (1, 3, 2)
+  # (2, 1, 3)
+  # (2, 3, 1)
+  # (3, 1, 2)
+  # (3, 2, 1)
+
+  # Перестановки с определённым количеством элементов (например 2)
+  data = ['A', 'B', 'C', 'D']
+  permutations_of_length_2 = itertools.permutations(data, 2)
+  for p in permutations_of_length_2:
+      print(p)
+
+  # Результат: 
+  # ('A', 'B')
+  # ('A', 'C')
+  # ('A', 'D')
+  # ('B', 'A')
+  # ('B', 'C')
+  # ('B', 'D')
+  # ('C', 'A')
+  # ('C', 'B')
+  # ('C', 'D')
+  # ('D', 'A')
+  # ('D', 'B')
+  # ('D', 'C')
+  ```
+
+- `combinations(iterable, r)` Все сочетания без повторений, порядок не учитывается.
+  ```python
+  # Результат: 
+  ```
+
+- `combinations_with_replacement(iterable, r)` Сочетания с повторениями.
+  ```python
+  # Результат: 
+  ```
+
+**Итераторы, выполняющие преобразования**
 
 - `accumulate(iterable, func=operator.add, *, initial=None)` Накопление частичных результатов (сумма, произведение, максимум и др.).
 - `starmap(function, iterable)` Применяет функцию, распаковывая аргументы из каждого элемента (кортежа).
 - `pairwise(iterable)` Пары соседних элементов: (a0, a1), (a1, a2), …
 - `batched(iterable, n)` Разбивает последовательность на чанки длины n.
+```python
+```
+```python
+```
+```python
+```
+```python
+```
 
-### Группировка
+**Группировка**
 
 - `groupby(iterable, key=None)` Группирует последовательные элементы по ключу. Работает правильно только на отсортированных данных (по ключу группировки).
 
-### Рецепты (часто используемые шаблоны использования itertools)
+```python
+```
+**Рецепты (часто используемые шаблоны использования itertools)**
 
 Не входят в сам модуль, но приводятся в документации как готовые конструкции:
 
@@ -282,3 +371,4 @@ print("Result:", list(zipped_longest_custom))
 * `flatten(list of lists)` через chain.from_iterable.
 * `powerset(iterable)` все подмножества.
 * `roundrobin(iterables)` циклический обход нескольких последовательностей.
+
