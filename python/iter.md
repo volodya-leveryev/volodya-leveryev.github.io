@@ -178,78 +178,90 @@ print("Scores:", scores)
 **Итераторы, порождающие последовательность**
 
 - `count(start=0, step=1)` Бесконечная арифметическая прогрессия. Использование: генерация последовательных чисел.
+  <pre><code class="language-python">
+  import itertools
+
+  counter1 = itertools.count()
+  for i in range(5):
+      print(next(counter1)) # Результат: 0, 1, 2, 3, 4
+
+  counter2 = itertools.count(start=10, step=2)
+  for i in range(5):
+      print(next(counter2)) # Результат: 10, 12, 14, 16, 18
+  </code></pre>
+
 - `cycle(iterable)` Бесконечно повторяет элементы переданного итерируемого объекта.
+  <pre><code class="language-python">
+  import itertools
+
+  # Бесконечный повтор значений из списка
+  colors = ['red', 'green', 'blue']
+  color_cycler = itertools.cycle(colors)
+  for i in range(7):
+      print(next(color_cycler))
+      # Результат: red, green, blue, red, green, blue, red
+  </code></pre>
+
 - `repeat(object, times=None)` Повторяет один и тот же объект указанное число раз или бесконечно.
+  <pre><code class="language-python">
+  import itertools
 
-<pre><code class="language-python">
-import itertools
+  # Повтор значения ровно 3 раза
+  repeated_string = itertools.repeat("Hello", 3)
+  for item in repeated_string:
+      print(item) # Результат: Hello, Hello, Hello
 
-counter1 = itertools.count()
-for i in range(5):
-    print(next(counter1)) # Результат: 0, 1, 2, 3, 4
-
-counter2 = itertools.count(start=10, step=2)
-for i in range(5):
-    print(next(counter2)) # Результат: 10, 12, 14, 16, 18
-
-# Бесконечный повтор значений из списка
-colors = ['red', 'green', 'blue']
-color_cycler = itertools.cycle(colors)
-for i in range(7):
-    print(next(color_cycler))
-    # Результат: red, green, blue, red, green, blue, red
-
-# Повтор значения ровно 3 раза
-repeated_string = itertools.repeat("Hello", 3)
-for item in repeated_string:
-    print(item) # Результат: Hello, Hello, Hello
-
-# Бесконечно повторящийся генератор
-repeated_number = itertools.repeat(42)
-for i in range(5):
-    print(next(repeated_number)) # Результат: 42, 42, 42, 42, 42
-</code></pre>
+  # Бесконечно повторящийся генератор
+  repeated_number = itertools.repeat(42)
+  for i in range(5):
+      print(next(repeated_number)) # Результат: 42, 42, 42, 42, 42
+  </code></pre>
 
 **Итераторы, объединяющие последовательности**
 
 - `chain(*iterables)` Итерирует по нескольким последовательностям подряд.
+  <pre><code class="language-python">
+  from itertools import chain
+
+  list1 = [1, 2, 3]
+  tuple1 = ('a', 'b')
+  string1 = "XYZ"
+
+  # Запуск итераторов по цепочке
+  chained_iterator = chain(list1, tuple1, string1)
+  print(f"Result: {list(chained_iterator)}")
+  # Result: [1, 2, 3, 'a', 'b', 'X', 'Y', 'Z']
+  </code></pre>
+
 - `chain.from_iterable(iterable_of_iterables)` То же, но принимает один итерируемый объект, содержащий другие.
+  <pre><code class="language-python">
+  from itertools import chain
+
+  # Запуск итераторов из итераторов
+  list_of_iterables = [[10, 20], (30, 40), "50"]
+  chained_from_iterable = chain.from_iterable(list_of_iterables)
+  print(f"Result: {list(chained_from_iterable)}")
+  # Result: [10, 20, 30, 40, '5', '0']
+  </code></pre>
+
 - `zip_longest(*iterables, fillvalue=None)` Аналог встроенного zip, но продолжает до самой длинной последовательности, подставляя fillvalue при нехватке элементов.
+  <pre><code class="language-python">
+  from itertools import zip_longest
 
-<pre><code class="language-python">
-from itertools import chain
+  numbers = [1, 2, 3, 4]
+  letters = ['a', 'b']
+  symbols = ['!', '@', '#', '$', '%']
 
-list1 = [1, 2, 3]
-tuple1 = ('a', 'b')
-string1 = "XYZ"
+  # Сцепляем значения коллекций, дополняем отсутствующие значения с помощью None
+  zipped_longest_default = zip_longest(numbers, letters, symbols)
+  print("Result:", list(zipped_longest_default))
+  # Result: [(1, 'a', '!'), (2, 'b', '@'), (3, None, '#'), (4, None, '$'), (None, None, '%')]
 
-# Запуск итераторов по цепочке
-chained_iterator = chain(list1, tuple1, string1)
-print(f"Result: {list(chained_iterator)}")
-# Result: [1, 2, 3, 'a', 'b', 'X', 'Y', 'Z']
-
-# Запуск итераторов из итераторов
-list_of_iterables = [[10, 20], (30, 40), "50"]
-chained_from_iterable = chain.from_iterable(list_of_iterables)
-print(f"Result: {list(chained_from_iterable)}")
-# Result: [10, 20, 30, 40, '5', '0']
-
-from itertools import zip_longest
-
-numbers = [1, 2, 3, 4]
-letters = ['a', 'b']
-symbols = ['!', '@', '#', '$', '%']
-
-# Сцепляем значения коллекций, дополняем отсутствующие значения с помощью None
-zipped_longest_default = zip_longest(numbers, letters, symbols)
-print("Result:", list(zipped_longest_default))
-# Result: [(1, 'a', '!'), (2, 'b', '@'), (3, None, '#'), (4, None, '$'), (None, None, '%')]
-
-# Сцепляем значения коллекций, дополняем отсутствующие значения с помощью кастомного значения
-zipped_longest_custom = zip_longest(numbers, letters, symbols, fillvalue='-')
-print("Result:", list(zipped_longest_custom))
-# Result: [(1, 'a', '!'), (2, 'b', '@'), (3, '-', '#'), (4, '-', '$'), ('-', '-', '%')]
-</code></pre>
+  # Сцепляем значения коллекций, дополняем отсутствующие значения с помощью кастомного значения
+  zipped_longest_custom = zip_longest(numbers, letters, symbols, fillvalue='-')
+  print("Result:", list(zipped_longest_custom))
+  # Result: [(1, 'a', '!'), (2, 'b', '@'), (3, '-', '#'), (4, '-', '$'), ('-', '-', '%')]
+  </code></pre>
 
 **Фильтрация и отбор элементов**
 
@@ -337,8 +349,47 @@ print("Result:", list(zipped_longest_custom))
 **Итераторы, выполняющие преобразования**
 
 - `accumulate(iterable, func=operator.add, *, initial=None)` Накопление частичных результатов (сумма, произведение, максимум и др.).
+  <pre><code class="language-python">
+  import itertools
+
+  numbers = [1, 2, 3, 4, 5]
+  cumulative_sums = list(itertools.accumulate(numbers))
+  print(f"Накопительная сумма: {cumulative_sums}")
+  # Результат: [1, 3, 6, 10, 15]
+  </code></pre>
+
+  <pre><code class="language-python">
+  import itertools
+  import operator
+
+  numbers = [1, 2, 3, 4, 5]
+  cumulative_products = list(itertools.accumulate(numbers, operator.mul))
+  print(f"Накопление с перемножением: {cumulative_products}")
+  # Результат: [1, 2, 6, 24, 120]
+  </code></pre>
+
+  <pre><code class="language-python">
+  import itertools
+
+  data = [10, 50, 20, 80, 30]
+  running_max = list(itertools.accumulate(data, func=lambda x, y: max(x, y)))
+  print(f"Накопление максимума: {running_max}")
+  # Результат: [10, 50, 50, 80, 80]
+  </code></pre>
+
+  <pre><code class="language-python">
+  import itertools
+
+  numbers = [1, 2, 3, 4, 5]
+  cumulative_with_initial = list(itertools.accumulate(numbers, initial=10))
+  print(f"Накопительная сумма с начальным значением: {cumulative_with_initial}")
+  # Результат: [10, 11, 13, 16, 20, 25]
+  </code></pre>
+
 - `starmap(function, iterable)` Применяет функцию, распаковывая аргументы из каждого элемента (кортежа).
+
 - `pairwise(iterable)` Пары соседних элементов: (a0, a1), (a1, a2), …
+
 - `batched(iterable, n)` Разбивает последовательность на чанки длины n.
 
 **Группировка**
