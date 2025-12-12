@@ -55,10 +55,10 @@ for elem in a:
 - `a.issubset(b)` — то же что и `a <= b`
 - `a.issuperset(b)` — то же что и `a >= b`
 - `a.difference(b)` — то же что и `a - b`
-- `a.difference_update(b)` — то же что и `a = a - b (a -= b)`
+- `a.difference_update(b)` — то же что и `a = a - b или a -= b`
 - `a.intersection(b)` — то же что и `a & b`
-- `a.intersection_update(b)` — то же что и `a = a & b (a &= b)`
+- `a.intersection_update(b)` — то же что и `a = a & b или a &= b`
 - `a.symmetric_difference(b)` — то же что и `a ^ b`
-- `a.symmetric_difference_update(b)` — то же что и `a = a ^ b (a ^= b)`
+- `a.symmetric_difference_update(b)` — то же что и `a = a ^ b или a ^= b`
 - `a.union(b)` — то же что и `a | b`
-- `a.update(b)` — то же что и `a = a | b (a |= b)`
+- `a.update(b)` — то же что и `a = a | b или a |= b`
