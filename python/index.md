@@ -11,6 +11,7 @@ title: Оглавление
 
 * [Введение](./lecture-intro)
 * [Синтаксис (ветвления)](./lecture-if)
+* [Операторы](./lecture-operators)
 * [Работа со списками](./lecture-list)
 * [Работа со словарями](./lecture-dict)
 * [Работа со множествами](./lecture-set)
