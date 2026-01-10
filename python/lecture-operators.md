@@ -28,7 +28,7 @@ title: Синтаксические конструкции
 </thead>
 <tbody>
   <tr><td><code>+</code></td><td>Сложение</td><td>Складывает два операнда</td></tr>
-  <tr><td><code></code></td><td>Вычитание</td><td>Вычитает правый операнд из левого</td></tr>
+  <tr><td><code>-</code></td><td>Вычитание</td><td>Вычитает правый операнд из левого</td></tr>
   <tr><td><code>*</code></td><td>Умножение</td><td>Умножает два операнда</td></tr>
   <tr><td><code>/</code></td><td>Деление</td><td>Вещественное деление (в ответе не целые числа)</td></tr>
   <tr><td><code>//</code></td><td>Целочисленное деление</td><td>Целое деление (в ответе целые числа)</td></tr>
@@ -38,7 +38,7 @@ title: Синтаксические конструкции
 </table>
 
 **Примеры** 
-```
+<pre><code class="language-python">
 a = 17
 b = 4
 
@@ -49,7 +49,7 @@ print("Деление:", a / b) # 4.25
 print("Целочисленное деление:", a // b) # 4 
 print("Остаток от деления:", a % b) # 1 
 print("Возведение в степень:", a ** b) # 83521
-```
+</code></pre>
 
 ## Операторы сравнения 
 Сравнивают два значения и возвращают True или False 
@@ -61,34 +61,35 @@ print("Возведение в степень:", a ** b) # 83521
 <tbody>
   <tr><td><code>==</code></td><td>Равно</td><td>Проверяет равенство значений</td></tr>
   <tr><td><code>!=</code>/td><td>Не равно</td><td>Проверяет неравенство значений</td></tr>
-  <tr><td><code></code></td><td>Больше</td><td>Проверяет, больше ли левый операнд</td></tr>
-  <tr><td></code></td><td>Меньше</td><td>Проверяет, меньше ли левый операнд</td></tr>
-  <tr><td>>=</code></td><td>Больше или равно</td><td>Проверяет, больше или равен левый операнд</td></tr>
+  <tr><td><code>&gt;</code></td><td>Больше</td><td>Проверяет, больше ли левый операнд</td></tr>
+  <tr><td><code>&lt;</code></td><td>Меньше</td><td>Проверяет, меньше ли левый операнд</td></tr>
+  <tr><td><code>&gt;=</code></td><td>Больше или равно</td><td>Проверяет, больше или равен левый операнд</td></tr>
+  <tr><td><code>&lt;=</code></td><td>Меньше или равно</td><td>Проверяет, меньше или равен левый операнд</td></tr>
 </table>
 
 **Примеры** 
-```
+<pre><code class="language-python">
 # Сравнение чисел
 x = 10 
 y = 5 
 z = 10 
 print(x == y) # False 
 print(x != y) # True 
-print(x > y) # True 
-print(x < y) # False 
-print(x >= z) # True 
-print(x <= z) # True 
+print(x &gt; y) # True 
+print(x &lt; y) # False 
+print(x &gt;= z) # True 
+print(x &lt;= z) # True 
 
 # Сравнение строк (лексиграфическое)
 str1 = "apple" 
 str2 = "banana" 
-print("Сравнение строк:", str1 < str2) 
+print("Сравнение строк:", str1 &lt; str2) 
 # True
 # a в unicode - 97
 # b в unicode - 98
-# 97 < 98, поэтому сразу определяется, что "apple" < "banana" — True.
+# 97 &lt; 98, поэтому сразу определяется, что "apple" &lt; "banana" — True.
 # Дальнейшие символы не проверяются, так как отличие уже найдено.
-``` 
+</code></pre>
 
 ## Операторы присваивания 
 Присваивают значения переменным
@@ -98,14 +99,14 @@ print("Сравнение строк:", str1 < str2)
   <tr><th>Оператор</th><th>Пример</th><th>Эквивалент</th><th>Описание</th></tr>
 </thead>
 <tbody>
-  <tr><td>`=`</td><td>`x = 5`</td><td>`x = 5`</td><td>Простое присваивание</td></tr>
-  <tr><td>`+=`</td><td>`x += 3`</td><td>`x = x + 3`</td><td>Добавление с присваиванием</td></tr>
-  <tr><td>`-=`</td><td>`x -= 2`</td><td>`x = x - 2`</td><td>Вычитание с присваиванием</td></tr>
-  <tr><td>`*=`</td><td>`x *= 4`</td><td>`x = x * 4`</td><td>Умножение с присваиванием</td></tr>
-  <tr><td>`/=`</td><td>`x /= 2`</td><td>`x = x / 2`</td><td>Деление с присваиванием</td></tr>
-  <tr><td>`//=`</td><td>`x //= 3`</td><td>`x = x // 3`</td><td>Целочисленное деление с присв.</td></tr>
-  <tr><td>`%=`</td><td>`x %= 3`</td><td>`x = x % 3`</td><td>Остаток от деления с присв.</td></tr>
-  <tr><td>`**=`</td><td>`x **= 2`</td><td>`x = x ** 2`</td><td>Возведение в степень с присв.</td></tr>
+  <tr><td><code>=</code></td><td><code>x = 5</code></td><td><code>x = 5</code></td><td>Простое присваивание</td></tr>
+  <tr><td><code>+=</code></td><td><code>x += 3</code></td><td><code>x = x + 3</code></td><td>Добавление с присваиванием</td></tr>
+  <tr><td><code>-=</code></td><td><code>x -= 2</code></td><td><code>x = x - 2</code></td><td>Вычитание с присваиванием</td></tr>
+  <tr><td><code>*=</code></td><td><code>x *= 4</code></td><td><code>x = x * 4</code></td><td>Умножение с присваиванием</td></tr>
+  <tr><td><code>/=</code></td><td><code>x /= 2</code></td><td><code>x = x / 2</code></td><td>Деление с присваиванием</td></tr>
+  <tr><td><code>//=</code></td><td><code>x //= 3</code></td><td><code>x = x // 3</code></td><td>Целочисленное деление с присв.</td></tr>
+  <tr><td><code>%=</code></td><td><code>x %= 3</code></td><td><code>x = x % 3</code></td><td>Остаток от деления с присв.</td></tr>
+  <tr><td><code>**=</code></td><td><code>x **= 2</code></td><td><code>x = x ** 2</code></td><td>Возведение в степень с присв.</td></tr>
 </tbody>
 </table>
 
@@ -118,14 +119,14 @@ print("Сравнение строк:", str1 < str2)
   <tr><th>Оператор</th><th>Название</th><th>Описание</th></tr>
 </thead>
 <tbody>
-  <tr><td>`and`</td><td>И</td><td>True, если оба операнда True</td></td>
-  <tr><td>`or`</td><td>ИЛИ</td><td>True, если хотя бы один операнд True</td></td>
-  <tr><td>`not`</td><td>НЕ</td><td>Инвертирует значение</td></td>
+  <tr><td><code>and</code></td><td>И</td><td>True, если оба операнда True</td></td>
+  <tr><td><code>or</code></td><td>ИЛИ</td><td>True, если хотя бы один операнд True</td></td>
+  <tr><td><code>not</code></td><td>НЕ</td><td>Инвертирует значение</td></td>
 </tbody>
 </table>
 
 **Примеры** 
-```
+<pre><code class="language-python">
 print(True and True) # True 
 print(True and False) # False 
 print(False and False) # False 
@@ -139,9 +140,10 @@ print(not False) # True
 age = 25 
 has_license = True 
 
-can_drive = age >= 18 and has_license 
+can_drive = age &gt;= 18 and has_license 
 print(f"Может ли водить машину: {can_drive}") # True
-```
+</code></pre>
+
 ## Операторы идентичности 
 Проверяют, являются ли объекты одним и тем же объектом в памяти. Не путать со сравнением значений
 
@@ -150,13 +152,13 @@ print(f"Может ли водить машину: {can_drive}") # True
   <tr><th>Оператор</th><th>Название</th><th>Описание</th></tr>
 </thead>
 <tbody>
-  <tr><td>`is`</td><td>Это</td><td>True, если оба объекта одинаковые</td></tr>
-  <tr><td>`is not`</td><td>Не это</td><td>True, если объекты разные</td></tr>
+  <tr><td><code>is</code></td><td>Это</td><td>True, если оба объекта одинаковые</td></tr>
+  <tr><td><code>is not</code></td><td>Не это</td><td>True, если объекты разные</td></tr>
 </tbody>
 </table>
 
 **Примеры** 
-```
+<pre><code class="language-python">
 # Для простых типов (интернирование) 
 a = 256 
 b = 256 
@@ -169,15 +171,22 @@ list3 = list1
 print(list1 is list2) # False (разные объекты) 
 print(list1 is list3) # True (один и тот же объект) 
 print(list1 == list2) # True (содержимое одинаковое) 
-```
+</code></pre>
+
 ## Операторы принадлежности Проверяют наличие элемента в последовательности. 
-| Оператор | Название | Описание |
-|----------|----------|----------|
-| `in` | Входит в | True, если элемент в последовательности |
-| `not in` | Не входит в | True, если элемента нет в последовательности |
+
+<table class="table table-bordered table-hover">
+<thead>
+  <tr><th>Оператор</th><th>Название</th><th>Описание</th></tr>
+</thead>
+<tbody>
+  <tr><td><code>in</code></td><td>Входит в</td><td><code>True</code>, если элемент в последовательности</td></tr>
+  <tr><td><code>not in</code></td><td>Не входит в</td><td><code>True</code>, если элемента нет в последовательности</td></tr>
+</tbody>
+</table>
 
 **Примеры** 
-```
+<pre><code class="language-python">
 # Проверка в строках 
 text = "Hello, World!" 
 print('Hello' in text) # True 
@@ -195,20 +204,21 @@ person = {'name': 'Alice', 'age': 30, 'city': 'Moscow'}
 print('name' in person) # True 
 print('Alice' in person) # False (проверяет ключи, не значения) 
 print('age' not in person) # False 
-``` 
+</code></pre>
+
 ## Битовые операторы 
 Работают с числами на уровне битов (двоичного представления). 
 | Оператор | Название | Описание |
 |----------|----------|----------|
-| `&` | И (AND) | Побитовое И |
-| `\|` | ИЛИ (OR) | Побитовое ИЛИ |
-| `^` | XOR | Исключающее ИЛИ |
-| `~` | НЕ (NOT) | Побитовое отрицание |
-| `<<` | Сдвиг влево | Сдвиг битов влево |
-| `>>` | Сдвиг вправо | Сдвиг битов вправо |
+| <code>&</code> | И (AND) | Побитовое И |
+| <code>\|</code> | ИЛИ (OR) | Побитовое ИЛИ |
+| <code>^</code> | XOR | Исключающее ИЛИ |
+| <code>~</code> | НЕ (NOT) | Побитовое отрицание |
+| <code>&lt;&lt;</code> | Сдвиг влево | Сдвиг битов влево |
+| <code>&gt;&gt;</code> | Сдвиг вправо | Сдвиг битов вправо |
 
 **Примеры** 
-```
+<pre><code class="language-python">
 a = 10 # 1010 в двоичной 
 b = 4 # 0100 в двоичной
 
@@ -233,13 +243,13 @@ print(~a)
 # Ставим знак минус: -11
 
 # Сдвиг влево 
-print(a << 1) # 1010 << 1 = 10100 (20) 
-print(a << 2) # 1010 << 2 = 101000 (40) 
+print(a &lt;&lt; 1) # 1010 &lt;&lt; 1 = 10100 (20) 
+print(a &lt;&lt; 2) # 1010 &lt;&lt; 2 = 101000 (40) 
 
 # Сдвиг вправо 
-print(a >> 1) # 1010 >> 1 = 0101 (5) 
-print(a >> 2) # 1010 >> 2 = 0010 (2) 
-```
+print(a &gt;&gt; 1) # 1010 &gt;&gt; 1 = 0101 (5) 
+print(a &gt;&gt; 2) # 1010 &gt;&gt; 2 = 0010 (2) 
+</code></pre>
 
 ## Приоритет операторов при выполнении операций: 
 1. `()` - скобки (группировка) - ВЫСШИЙ
@@ -247,18 +257,18 @@ print(a >> 2) # 1010 >> 2 = 0010 (2)
 3. `+x`, `-x`, `~x` - унарные плюс, минус, побитовое НЕ 
 4. `*`, `/`, `//`, `%` - умножение, деление, целочисленное деление, остаток 
 5. `+`, `-` - сложение, вычитание 
-6. `<<`, `>>` - битовые сдвиги 
+6. `&lt;&lt;`, `&gt;&gt;` - битовые сдвиги 
 7. `&` - побитовое И 
 8. `^` - побитовое исключающее ИЛИ 
 9. `|` - побитовое ИЛИ 
-10. `==`, `!=`, `>`, `<`, `>=`, `<=`, `is`, `is not`, `in`, `not in` - сравнение, идентичность, принадлежность 
+10. `==`, `!=`, `&gt;`, `&lt;`, `&gt;=`, `&lt;=`, `is`, `is not`, `in`, `not in` - сравнение, идентичность, принадлежность 
 11. `not` - логическое НЕ 
 12. `and` - логическое И 
 13. `or` - логическое ИЛИ 
 14. `=` и другие операторы присваивания - НИЗШИЙ
 
 **Примеры** 
-```
+<pre><code class="language-python">
 # Пример с разным приоритетом 
 result1 = 2 + 3 * 4 ** 2 / 8 - 1
 # Порядок вычислений: 
@@ -281,10 +291,10 @@ print(result2:.4f) # 11.4286
 
 # Смешанные операторы 
 a, b, c = 5, 3, 2 
-result3 = not a > b and c != 0 or b == 3 
+result3 = not a &gt; b and c != 0 or b == 3 
 
 # Порядок вычислений: 
-# 1. a > b = 5 > 3 = True 
+# 1. a &gt; b = 5 &gt; 3 = True 
 # 2. not True = False 
 # 3. c != 0 = 2 != 0 = True 
 # 4. False and True = False 
@@ -292,4 +302,4 @@ result3 = not a > b and c != 0 or b == 3
 # 6. False or True = True 
 
 print(result3) # True
-```
+</code></pre>
