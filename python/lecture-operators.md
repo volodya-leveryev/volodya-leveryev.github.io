@@ -52,7 +52,7 @@ print("Возведение в степень:", a ** b) # 83521
 </code></pre>
 
 ## Операторы сравнения 
-Сравнивают два значения и возвращают True или False 
+Сравнивают два значения и возвращают <code>True</code> или <code>False</code> 
 
 <table class="table table-bordered table-hover">
 <thead>
@@ -60,7 +60,7 @@ print("Возведение в степень:", a ** b) # 83521
 </thead>
 <tbody>
   <tr><td><code>==</code></td><td>Равно</td><td>Проверяет равенство значений</td></tr>
-  <tr><td><code>!=</code>/td><td>Не равно</td><td>Проверяет неравенство значений</td></tr>
+  <tr><td><code>!=</code></td><td>Не равно</td><td>Проверяет неравенство значений</td></tr>
   <tr><td><code>&gt;</code></td><td>Больше</td><td>Проверяет, больше ли левый операнд</td></tr>
   <tr><td><code>&lt;</code></td><td>Меньше</td><td>Проверяет, меньше ли левый операнд</td></tr>
   <tr><td><code>&gt;=</code></td><td>Больше или равно</td><td>Проверяет, больше или равен левый операнд</td></tr>
@@ -112,7 +112,7 @@ print("Сравнение строк:", str1 &lt; str2)
 
 
 ## Логические операторы 
-Работают с булевыми значениями (True/False)
+Работают с булевыми значениями (<code>True</code>/<code>False</code>)
 
 <table class="table table-bordered table-hover">
 <thead>
@@ -208,14 +208,20 @@ print('age' not in person) # False
 
 ## Битовые операторы 
 Работают с числами на уровне битов (двоичного представления). 
-| Оператор | Название | Описание |
-|----------|----------|----------|
-| <code>&</code> | И (AND) | Побитовое И |
-| <code>\|</code> | ИЛИ (OR) | Побитовое ИЛИ |
-| <code>^</code> | XOR | Исключающее ИЛИ |
-| <code>~</code> | НЕ (NOT) | Побитовое отрицание |
-| <code>&lt;&lt;</code> | Сдвиг влево | Сдвиг битов влево |
-| <code>&gt;&gt;</code> | Сдвиг вправо | Сдвиг битов вправо |
+
+<table class="table table-bordered table-hover">
+<thead>
+  <tr><th>Оператор</th><th>Название</th><th>Описание</th></tr>
+</thead>
+<tbody>
+  <tr><td><code>&</code></td><td>И (AND)</td><td>Побитовое И</td></tr>
+  <tr><td><code>\|</code></td><td>ИЛИ (OR)</td><td>Побитовое ИЛИ</td></tr>
+  <tr><td><code>^</code></td><td>XOR</td><td>Исключающее ИЛИ</td></tr>
+  <tr><td><code>~</code></td><td>НЕ (NOT)</td><td>Побитовое отрицание</td></tr>
+  <tr><td><code>&lt;&lt;</code></td><td>Сдвиг влево</td><td>Сдвиг битов влево</td></tr>
+  <tr><td><code>&gt;&gt;</code></td><td>Сдвиг вправо</td><td>Сдвиг битов вправо</td></tr>
+</tbody>
+</table>
 
 **Примеры** 
 <pre><code class="language-python">
