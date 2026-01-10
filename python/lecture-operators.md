@@ -1,8 +1,8 @@
 ---
 layout: python
-title: Синтаксические конструкции
+title: Операторы в Python
 ---
-# Конспект по операторам в Python 
+# Операторы в Python 
 
 ## Содержание 
 1. Введение в операторы
@@ -153,8 +153,8 @@ print(f"Может ли водить машину: {can_drive}") # True
   <tr><th>Оператор</th><th>Название</th><th>Описание</th></tr>
 </thead>
 <tbody>
-  <tr><td><code>is</code></td><td>Это</td><td>True, если оба объекта одинаковые</td></tr>
-  <tr><td><code>is not</code></td><td>Не это</td><td>True, если объекты разные</td></tr>
+  <tr><td><code>is</code></td><td>Это</td><td><code>True</code>, если оба объекта одинаковые</td></tr>
+  <tr><td><code>is not</code></td><td>Не это</td><td><code>True</code>, если объекты разные</td></tr>
 </tbody>
 </table>
 
@@ -216,7 +216,7 @@ print('age' not in person) # False
 </thead>
 <tbody>
   <tr><td><code>&</code></td><td>И (AND)</td><td>Побитовое И</td></tr>
-  <tr><td><code>\|</code></td><td>ИЛИ (OR)</td><td>Побитовое ИЛИ</td></tr>
+  <tr><td><code>|</code></td><td>ИЛИ (OR)</td><td>Побитовое ИЛИ</td></tr>
   <tr><td><code>^</code></td><td>XOR</td><td>Исключающее ИЛИ</td></tr>
   <tr><td><code>~</code></td><td>НЕ (NOT)</td><td>Побитовое отрицание</td></tr>
   <tr><td><code>&lt;&lt;</code></td><td>Сдвиг влево</td><td>Сдвиг битов влево</td></tr>
@@ -259,20 +259,20 @@ print(a &gt;&gt; 2) # 1010 &gt;&gt; 2 = 0010 (2)
 </code></pre>
 
 ## Приоритет операторов при выполнении операций: 
-1. <code>()</code> - скобки (группировка) - ВЫСШИЙ
-2. <code>**</code> - возведение в степень 
-3. <code>+x</code>, <code>-x</code>, <code>~x</code> - унарные плюс, минус, побитовое НЕ 
-4. <code>*</code>, <code>/</code>, <code>//</code>, <code>%</code> - умножение, деление, целочисленное деление, остаток 
-5. <code>+</code>, <code>-</code> - сложение, вычитание 
-6. <code>&lt;&lt;</code>, <code>&gt;&gt;</code> - битовые сдвиги 
-7. <code>&</code> - побитовое И 
-8. <code>^</code> - побитовое исключающее ИЛИ 
-9. <code>|</code> - побитовое ИЛИ 
-10. <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>is</code>, <code>is not</code>, <code>in</code>, <code>not in</code> - сравнение, идентичность, принадлежность 
-11. <code>not</code> - логическое НЕ 
-12. <code>and</code> - логическое И 
-13. <code>or</code> - логическое ИЛИ 
-14. <code>=</code> и другие операторы присваивания - НИЗШИЙ
+1. <code>()</code> — скобки (группировка) — ВЫСШИЙ
+2. <code>**</code> — возведение в степень 
+3. <code>+x</code>, <code>-x</code>, <code>~x</code> — унарные плюс, минус, побитовое НЕ 
+4. <code>*</code>, <code>/</code>, <code>//</code>, <code>%</code> — умножение, деление, целочисленное деление, остаток 
+5. <code>+</code>, <code>-</code> — сложение, вычитание 
+6. <code>&lt;&lt;</code>, <code>&gt;&gt;</code> — битовые сдвиги 
+7. <code>&</code> — побитовое И 
+8. <code>^</code> — побитовое исключающее ИЛИ 
+9. <code>|</code> — побитовое ИЛИ 
+10. <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>is</code>, <code>is not</code>, <code>in</code>, <code>not in</code> — сравнение, идентичность, принадлежность 
+11. <code>not</code> — логическое НЕ 
+12. <code>and</code> — логическое И 
+13. <code>or</code> — логическое ИЛИ 
+14. <code>=</code> и другие операторы присваивания — НИЗШИЙ
 
 **Примеры** 
 <pre><code class="language-python">
