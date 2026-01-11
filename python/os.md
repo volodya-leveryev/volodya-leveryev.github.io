@@ -30,9 +30,10 @@ Markdown# Модуль `os` в Python
 import os
 
 print(os.name)  # 'nt' (Windows) или 'posix' (Linux/macOS)
+```
 Понимание значения os.name важно для написания кроссплатформенного кода.
 
-2. Рабочая директория
+### 2. Рабочая директория
 Pythonimport os
 
 # Текущая рабочая директория (абсолютный путь)
@@ -55,7 +56,7 @@ os.chdir("data/processed")                 # относительный путь
 
 print(os.getcwd())                         # контроль
 
-3. Просмотр файлов и папок
+### 3. Просмотр файлов и папок
 Pythonos.listdir(path=".")          # список файлов и папок
 os.path.exists(path)          # существует ли путь → True/False
 Python# 1. Содержимое текущей папки
@@ -76,7 +77,7 @@ print(os.path.exists("backup"))        # папка
 if not os.path.exists("backup"):
     os.mkdir("backup")
 
-4. Создание и удаление каталогов
+### 4. Создание и удаление каталогов
 Pythonos.mkdir(path)       # создаёт одну папку (ошибка, если уже есть)
 os.makedirs(path)    # создаёт вложенные папки (есть exist_ok)
 os.rmdir(path)       # удаляет **пустую** папку
@@ -98,7 +99,7 @@ folder = "temp"
 if os.path.exists(folder) and not os.listdir(folder):
     os.rmdir(folder)
 
-5. Работа с файлами
+### 5. Работа с файлами
 Pythonos.remove(path)      # удалить файл
 os.rename(src, dst)  # переименовать или переместить
 Python# Удаление
@@ -116,7 +117,7 @@ os.rename("old_report.txt", "archive/report_2025.txt")
 if os.path.exists("bad_name.txt"):
     os.rename("bad_name.txt", "good_name.txt")
 
-6. Переменные окружения
+### 6. Переменные окружения
 Pythonimport os
 
 # Все переменные (словарь)
@@ -135,7 +136,7 @@ print(home)
 # Установка на время работы скрипта
 os.environ["MY_APP_MODE"] = "production"
 
-7. Запуск системных команд
+### 7. Запуск системных команд
 Pythonos.system("команда")   # возвращает код возврата (0 — успех)
 Python# Примеры
 os.system("dir")                      # Windows
@@ -147,7 +148,7 @@ os.system("ping -n 4 google.com")     # Windows
 os.system("ping -c 4 google.com")     # Linux/macOS
 Примечание: в современных проектах чаще используют модуль subprocess
 
-8. Информация о файлах (os.path)
+### 8. Информация о файлах (os.path)
 Pythonos.path.getsize(path)    # размер в байтах
 os.path.abspath(path)    # абсолютный путь
 os.path.isfile(path)     # это файл?
@@ -165,7 +166,7 @@ for f in os.listdir("."):
         size = os.path.getsize(f)
         print(f"{f:30} {size:8,} байт")
 
-9. Практические задачи
+### 9. Практические задачи
 Pythonimport os
 
 # 1. Переместить все .txt в backup
