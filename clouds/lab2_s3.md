@@ -25,7 +25,9 @@ title: Лаб. работа 2 — AWS S3
    <!DOCTYPE html>
    <html>
    <head><title>My AWS Website</title></head>
-   <body><h1>Welcome to my static website on AWS S3!</h1></body>
+   <body>
+      <h1>Welcome to my static website on AWS S3!</h1>
+   </body>
    </html>
    ```
 2. В веб-консоли AWS откройте созданный бакет.
