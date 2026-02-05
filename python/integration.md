@@ -16,16 +16,16 @@ title: Интеграция с библиотеками на C/C++
 Интерпретатор позволяет вызывать код на C с помощью библиотеки ctypes.
 
 Соглашения для вызова кода (calling conventions) могут отличаться для разных языков, разных компиляторов, разных вычислительных архитектур, разных ОС и т.п. 
-- https://en.wikipedia.org/wiki/Calling_convention
-- https://en.wikipedia.org/wiki/X86_calling_conventions
-- https://en.wikipedia.org/wiki/Name_mangling
+- [Calling convention](https://en.wikipedia.org/wiki/Calling_convention)
+- [X86 calling conventions](https://en.wikipedia.org/wiki/X86_calling_conventions)
+- [Name mangling](https://en.wikipedia.org/wiki/Name_mangling)
 
 ## Вызов подготовленного кода на C из Python
 
 <pre><code class="language-cpp">
 // модуль spam реализуется файлом spammodule.c
 #define PY_SSIZE_T_CLEAN
-#include <Python.h>
+#include &lt;Python.h&gt;
 
 // функция system()
 static PyObject* spam_system(PyObject *self, PyObject *args)
