@@ -252,7 +252,7 @@ else:
 # 4. Фильтрация только файлов в директории
 def list_files_only(directory):
     """Возвращает список только файлов в директории"""
-    return [item for item in os.listdir(directory) 
+    return [item for item in os.listdir(directory)
             if os.path.isfile(os.path.join(directory, item))]
 
 files = list_files_only(".")
@@ -307,13 +307,13 @@ if os.name != 'nt':  # Проверяем, что не Windows
     # Создаем файл и символическую ссылку
     with open("target_file.txt", "w") as f:
         f.write("Целевой файл")
-    
+
     os.symlink("target_file.txt", "symlink.txt")
-    
+
     # Проверяем
     print(f"symlink.txt это ссылка: {os.path.islink('symlink.txt')}")
     print(f"target_file.txt это ссылка: {os.path.islink('target_file.txt')}")
-    
+
     # Убираем за собой
     os.remove("symlink.txt")
     os.remove("target_file.txt")
@@ -397,7 +397,7 @@ def get_file_type(filename):
     """Определяет тип файла по расширению"""
     name, ext = os.path.splitext(filename)
     ext = ext.lower()
-    
+
     file_types = {
         '.jpg': 'изображение',
         '.jpeg': 'изображение',
@@ -411,7 +411,7 @@ def get_file_type(filename):
         '.zip': 'архив',
         '.mp4': 'видео'
     }
-    
+
     return file_types.get(ext, 'неизвестный тип')
 
 test_files = ["photo.jpg", "document.pdf", "script.py", "archive.tar.gz"]
@@ -518,7 +518,7 @@ file2 = "b.txt"
 if os.path.exists(file1) and os.path.exists(file2):
     size1 = os.path.getsize(file1)
     size2 = os.path.getsize(file2)
-    
+
     if size1 > size2:
         print(f"{file1} больше {file2} на {size1 - size2} байт")
     elif size2 > size1:
@@ -561,7 +561,7 @@ if os.path.exists("data.txt"):
     access_time = os.path.getatime("data.txt")
     print(f"Время последнего доступа: {access_time}")
     print(f"В формате даты: {datetime.fromtimestamp(access_time)}")
-    
+
     # 2. Проверка, когда файл был открыт последний раз
     now = time.time()
     days_since_access = (now - access_time) / (24 * 3600)
@@ -579,18 +579,18 @@ from datetime import datetime
 if os.path.exists("data.txt"):
     modify_time = os.path.getmtime("data.txt")
     print(f"Время последнего изменения: {datetime.fromtimestamp(modify_time)}")
-    
+
     # 2. Поиск самого нового файла в директории
     def get_newest_file(directory):
-        files = [f for f in os.listdir(directory) 
+        files = [f for f in os.listdir(directory)
                 if os.path.isfile(os.path.join(directory, f))]
-        
+
         if not files:
             return None
-        
+
         newest = max(files, key=lambda f: os.path.getmtime(os.path.join(directory, f)))
         return newest
-    
+
     newest = get_newest_file(".")
     if newest:
         print(f"Самый новый файл: {newest}")
@@ -606,7 +606,7 @@ from datetime import datetime
 if os.path.exists("data.txt"):
     create_time = os.path.getctime("data.txt")
     print(f"Время создания: {datetime.fromtimestamp(create_time)}")
-    
+
     # Сравнение времени создания и модификации
     modify_time = os.path.getmtime("data.txt")
     if create_time != modify_time:
@@ -628,11 +628,11 @@ with open("original.txt", "w") as f:
 # На Unix-like системах создаем жесткую ссылку
 if os.name != 'nt':
     os.link("original.txt", "hardlink.txt")
-    
+
     # Проверяем
     same1 = os.path.samefile("original.txt", "hardlink.txt")
     print(f"original.txt и hardlink.txt это один файл: {same1}")
-    
+
     # Убираем за собой
     os.remove("hardlink.txt")
 
@@ -657,7 +657,7 @@ import os
 if os.path.exists("test.txt"):
     stat1 = os.stat("test.txt")
     stat2 = os.stat("test.txt")
-    
+
     same = os.path.samestat(stat1, stat2)
     print(f"Stat структуры указывают на один файл: {same}")
 </code></pre>
@@ -678,16 +678,16 @@ def backup_txt_files(source_dir=".", backup_dir="backup"):
     if not os.path.exists(backup_dir):
         os.makedirs(backup_dir)
         print(f"Создана папка: {backup_dir}")
-    
+
     # Перемещаем все .txt файлы
     moved_count = 0
     for filename in os.listdir(source_dir):
         source_path = os.path.join(source_dir, filename)
-        
+
         # Проверяем что это файл и имеет расширение .txt
         if os.path.isfile(source_path) and filename.endswith('.txt'):
             target_path = os.path.join(backup_dir, filename)
-            
+
             try:
                 # Используем shutil.move для надежного перемещения
                 shutil.move(source_path, target_path)
@@ -695,7 +695,7 @@ def backup_txt_files(source_dir=".", backup_dir="backup"):
                 print(f"Перемещен: {filename}")
             except Exception as e:
                 print(f"Ошибка при перемещении {filename}: {e}")
-    
+
     print(f"\nИтог: перемещено {moved_count} файлов")
     return moved_count
 
@@ -714,38 +714,38 @@ def analyze_logs_directory(logs_dir="logs"):
     if not os.path.exists(logs_dir):
         print(f"Папка {logs_dir} не существует")
         return
-    
+
     if not os.path.isdir(logs_dir):
         print(f"{logs_dir} не является папкой")
         return
-    
+
     print(f"Анализ папки: {os.path.abspath(logs_dir)}")
     print("=" * 50)
-    
+
     total_size = 0
     file_count = 0
-    
+
     for filename in os.listdir(logs_dir):
         filepath = os.path.join(logs_dir, filename)
-        
+
         if os.path.isfile(filepath):
             size = os.path.getsize(filepath)
             total_size += size
             file_count += 1
-            
+
             # Форматированный вывод
             size_str = f"{size:,}".replace(",", " ")
             print(f"{filename:30} {size_str:>15} байт")
-    
+
     print("=" * 50)
-    
+
     # Статистика
     if file_count > 0:
         avg_size = total_size / file_count
         print(f"Всего файлов: {file_count}")
         print(f"Общий размер: {total_size:,} байт")
         print(f"Средний размер: {avg_size:,.0f} байт")
-        
+
         # Человеко-читаемый формат
         def human_size(size):
             for unit in ['B', 'KB', 'MB', 'GB']:
@@ -753,7 +753,7 @@ def analyze_logs_directory(logs_dir="logs"):
                     return f"{size:.2f} {unit}"
                 size /= 1024.0
             return f"{size:.2f} TB"
-        
+
         print(f"Общий размер: {human_size(total_size)}")
     else:
         print("В папке нет файлов")
@@ -778,57 +778,57 @@ def create_file_system_report(output_file="file_report.txt"):
         report.write(f"Создан: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
         report.write(f"Текущая директория: {os.path.abspath('.')}\n")
         report.write("=" * 70 + "\n\n")
-        
+
         # Статистика по типам файлов
         file_extensions = {}
         total_files = 0
         total_dirs = 0
-        
+
         # Обход текущей директории
         report.write("ФАЙЛЫ И ПАПКИ:\n")
         report.write("-" * 70 + "\n")
-        
+
         for item in os.listdir("."):
             item_path = os.path.join(".", item)
             abs_path = os.path.abspath(item_path)
-            
+
             if os.path.isfile(item_path):
                 # Информация о файле
                 size = os.path.getsize(item_path)
                 mtime = time.ctime(os.path.getmtime(item_path))
-                
+
                 report.write(f"[ФАЙЛ] {abs_path}\n")
                 report.write(f"       Размер: {size:,} байт | Изменен: {mtime}\n")
-                
+
                 # Статистика по расширениям
                 name, ext = os.path.splitext(item)
                 ext = ext.lower() if ext else "без расширения"
                 file_extensions[ext] = file_extensions.get(ext, 0) + 1
-                
+
                 total_files += 1
-                
+
             elif os.path.isdir(item_path):
                 report.write(f"[ПАПКА] {abs_path}\n")
                 total_dirs += 1
-        
+
         report.write("\n" + "=" * 70 + "\n")
-        
+
         # Статистика
         report.write("СТАТИСТИКА:\n")
         report.write(f"Всего файлов: {total_files}\n")
         report.write(f"Всего папок: {total_dirs}\n")
-        
+
         if file_extensions:
             report.write("\nРАСПРЕДЕЛЕНИЕ ПО РАСШИРЕНИЯМ:\n")
             sorted_exts = sorted(file_extensions.items(), key=lambda x: x[1], reverse=True)
             for ext, count in sorted_exts:
                 percentage = (count / total_files) * 100
                 report.write(f"  {ext:20} {count:4} файлов ({percentage:.1f}%)\n")
-        
+
         report.write("\n" + "=" * 70 + "\n")
         report.write("КОНЕЦ ОТЧЕТА\n")
         report.write("=" * 70 + "\n")
-    
+
     print(f"Отчет сохранен в: {os.path.abspath(output_file)}")
     print(f"Найдено: {total_files} файлов, {total_dirs} папок")
 
@@ -847,37 +847,37 @@ def analyze_directory_size(directory="."):
     total_size = 0
     file_count = 0
     dir_count = 0
-    
+
     for dirpath, dirnames, filenames in os.walk(directory):
         dir_count += len(dirnames)
-        
+
         for filename in filenames:
             filepath = os.path.join(dirpath, filename)
-            
+
             try:
                 size = os.path.getsize(filepath)
                 total_size += size
                 file_count += 1
             except OSError:
                 continue  # Пропускаем файлы без доступа
-    
+
     # Результаты
     print(f"Анализ директории: {os.path.abspath(directory)}")
     print(f"Всего файлов: {file_count}")
     print(f"Всего папок: {dir_count}")
     print(f"Общий размер: {total_size:,} байт")
-    
+
     # Человеко-читаемый формат
     size_gb = total_size / (1024**3)
     size_mb = total_size / (1024**2)
-    
+
     if size_gb >= 1:
         print(f"Общий размер: {size_gb:.2f} GB")
     elif size_mb >= 1:
         print(f"Общий размер: {size_mb:.2f} MB")
     else:
         print(f"Общий размер: {total_size / 1024:.2f} KB")
-    
+
     return total_size, file_count, dir_count
 
 # Использование
