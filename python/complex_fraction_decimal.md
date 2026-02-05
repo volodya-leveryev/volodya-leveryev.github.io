@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: python
 title: Комплексные числа, пакеты `fraction` и `decimal`
 ---
 
