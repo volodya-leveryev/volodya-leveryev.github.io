@@ -24,7 +24,7 @@ Elastic Beanstalk использует сервис AWS Cloudformation для б
 ## Практика
 
 1. Войдите в веб-консоль AWS.
-2. Откройте сервис Elastic Beanstalk в регионе Seoul (ap-east-1).
+2. Откройте сервис Elastic Beanstalk в регионе Seoul (ap-northeast-2).
 3. Создайте на локальном компьютере первую версию index.php (код прилагается ниже) и упакуйте его в ZIP-архив.
 4. Создайте новое веб-приложение Beanstalk:
 
@@ -32,7 +32,6 @@ Elastic Beanstalk использует сервис AWS Cloudformation для б
    * *Environment tier*: Web server environment
    * *Application information*, Application name: `<группа>-<фамилия>`
    * *Environment information*, Environment name: `<группа>-<фамилия>-prod`
-   * *Platform*, Platform type: Managed Platform
    * *Platform*, Platform: PHP
    * *Application code*: Upload your code
    * *Application code*, Version label: v1
