@@ -24,7 +24,7 @@ title: Лаб. работа 3 — Спотовые инстансы EC2
 ## 3. Создание запроса на спотовый инстанс
 1. Откройте **EC2** → **Instances** → **Spot Requests**.
 2. Создайте новый запрос:
-   - AMI **Amazon Linux 2**.
+   - AMI **Amazon Linux 2023**.
    - Key pair name: (optional)
    - Advanced launch parameters → Tags: Name, <Фамилия>, Instances, Fleet
    - vCPUs: minimum 2, maximum 4
@@ -46,11 +46,11 @@ title: Лаб. работа 3 — Спотовые инстансы EC2
 ## 6. Установка Docker, Certbot и HAProxy
 1. Обновите систему:
    ```sh
-   sudo yum update -y
+   sudo dnf update -y
    ```
 2. Установите Docker:
    ```sh
-   sudo amazon-linux-extras install -y docker
+   sudo dnf install -y docker
    sudo systemctl start docker
    sudo systemctl enable docker
    sudo usermod -a -G docker ec2-user
@@ -58,12 +58,11 @@ title: Лаб. работа 3 — Спотовые инстансы EC2
    ```
 3. Установите Certbot:
    ```sh
-   sudo amazon-linux-extras install -y epel
-   sudo yum install -y certbot
+   sudo dnf install -y certbot
    ```
 4. Установите HAProxy:
    ```sh
-   sudo yum install -y haproxy
+   sudo dnf install -y haproxy
    sudo systemctl enable haproxy
    ```
 
