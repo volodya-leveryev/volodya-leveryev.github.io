@@ -131,7 +131,7 @@ def prepare_numeric(value):
 def main():
     load_dotenv()
 
-    dynamo = boto3.client(
+    dynamo = boto3.resource(
         'dynamodb',
         aws_access_key_id=getenv('ACCESS_KEY_ID'),
         aws_secret_access_key=getenv('ACCESS_SECRET'),
@@ -143,7 +143,7 @@ def main():
         poster_link, _, _ = row['Poster_Link'].rsplit('.', maxsplit=2)
         poster_link += '._V1_SX300.jpg'
         new_item = {
-            'key': {'N': str(key)},
+            'key': key,
             'Title': {'S': row['Series_Title']},
             'Poster': {'S': poster_link},
             'Year': {'N': row['Released_Year']},
