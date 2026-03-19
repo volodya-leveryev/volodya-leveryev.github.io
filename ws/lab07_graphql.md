@@ -47,8 +47,10 @@ Resolvers — функции для получения и модификации
 
 1. Создайте каталог и виртуальное окружение Python
 2. Активировуйте виртуальное окружение и установите FastAPI
-   `venv\scripts\activate`
-   `pip install fastapi[standard] sqlmodel strawberry-graphql`
+    ```
+    venv\scripts\activate
+    pip install fastapi[standard] sqlmodel strawberry-graphql
+    ```
 3. Создайте `model.py`
 4. Загрузите данные по [странам](https://github.com/dr5hn/countries-states-cities-database/blob/master/csv/countries.csv) и [городам](https://github.com/dr5hn/countries-states-cities-database/blob/master/csv/cities.csv) в SQLite с помощью скрипта `load.py`
 5. Создайте `app.py`, запустите приложение и откройте в браузере [http://127.0.0.1:8000/graphql](http://127.0.0.1:8000/graphql)
