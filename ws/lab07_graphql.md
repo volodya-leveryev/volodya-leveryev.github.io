@@ -75,6 +75,7 @@ Resolvers — функции для получения и модификации
 **model.py**
 ```python
 from os import path
+from typing import Optional
 
 from sqlmodel import Field, Relationship, Session, SQLModel, create_engine
 
@@ -83,7 +84,7 @@ class City(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     name: str = Field(index=True)
     country_id: int = Field(foreign_key="country.id")
-    country: 'Country' | None = Relationship(back_populates="cities")
+    country: Optional['Country'] = Relationship(back_populates="cities")
 
 
 class Country(SQLModel, table=True):
