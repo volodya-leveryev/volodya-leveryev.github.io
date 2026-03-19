@@ -1,3 +1,7 @@
+---
+layout: python
+title: GraphQL
+---
 # GraphQL
 
 ## Теория
