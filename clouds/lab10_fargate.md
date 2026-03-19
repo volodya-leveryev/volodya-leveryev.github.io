@@ -79,7 +79,8 @@ Elastic Container Registry (ECR) — сервис для хранения обр
     * Task definition family: `<группа>-<фамилия>`
     * Container, Name: `<группа>-<фамилия>`
     * Container, Image URI: `<URI репозитория в ECR>`
-    * Container, Port name: 80
+    * Container, Container port: 80
+    * Container, CPU: 1
     * Оставьте значение других параметров по умолчанию.
 
 16. В сервисе ECS (Elastic Container Serivce), перейдите в раздел **Clusters**, создайте кластер ECS.
