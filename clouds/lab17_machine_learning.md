@@ -79,7 +79,7 @@ Gradio часто используют для демо, тестирования
     ```
 5. Установите необходимые библиотеки:
     ```cmd
-    pip install aiohttp[speedups] duckduckgo-search
+    pip install aiohttp[speedups] ddgs
     ```
 6. Создайте скрипт `prepare_data.py` с помощью кода в [гисте](https://gist.github.com/volodya-leveryev/99a1072b0086e41cc759ec28d458f4d5/).
 
