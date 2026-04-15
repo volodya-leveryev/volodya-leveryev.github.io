@@ -115,7 +115,7 @@ Gradio часто используют для демо, тестирования
 2. Создайте на локальном компьютере файл `requirements.txt` следующего содержания:
     ```text
     --index-url https://download.pytorch.org/whl/cpu
-    --extra-index-url https://simple.pypi.org
+    --extra-index-url https://pypi.org/simple/
     torch
     torchvision
     ```
