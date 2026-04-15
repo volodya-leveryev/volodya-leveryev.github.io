@@ -59,9 +59,10 @@ title: Оглавление
 
 Перед началом работы войдите в [веб-консоль](https://console.aws.amazon.com/)
 
-1. Откройте сервис RDS (в регионе Hong Kong, Seoul или Tokyo), нажмите **Create database**
+1. Откройте сервис RDS (в регионе Hong Kong, Seoul или Tokyo), нажмите **Create database** (Full configuration).
 
    * Engine type: MySQL
+   * Database creation method: Full configuration
    * Template: Free tier
    * DB instance identifier: <группа>-<фамилия>
    * Master username: strapi_user
@@ -146,14 +147,14 @@ title: Оглавление
 
 10. Откройте админку в браузере CMS Strapi (вместо localhost используйте публичный IP-адрес EC2-инстанса), создайте нового администратора.
 
-11. Перейдите в **Content-Types Builder** и создайте новую коллекцию `Books` с полями:
+11. Перейдите в **Content-Types Builder** и создайте новую коллекцию `Book` (во множественном числе `books`) с полями:
 
     * author (Short text)
     * title (Short text)
 
     После сохранения изменений в структуре БД дождитесь перезапуска сервера.
 
-12. Вернитесь на домашнюю страницу, перейдите в **Content Manager**, откройте созданную коллекцию `Books` и создайте несколько записей.
+12. Вернитесь на домашнюю страницу, перейдите в **Content Manager**, откройте созданную коллекцию `Book` и создайте несколько записей.
 
 13. Перейдите в **Settings**, **API Tokens**, откройте токен с полными правами, заново сгенерируйте и скопируйте его.
 
