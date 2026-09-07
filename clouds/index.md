@@ -28,6 +28,8 @@ title: Оглавление
 
 **Теория**
 
+1. [Введение в облачные вычисления](./lecture1_introduction)
+
 * [Облачная инфраструктура](./theory_infrastructure)
 * [Обзор провайдеров облачных услуг](./theory_providers)
 * [Обзор облачных сервисов](./provider_services)
