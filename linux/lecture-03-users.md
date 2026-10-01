@@ -55,6 +55,7 @@ title: Работа с пользователями
 - `addgroup` - интерактивное добавление группы.
 - `gpasswd` - смена пароль группы
 
+<!--
 ## Стандартная система прав доступа к файлам
 
 Для назначения прав доступа к файлам служит программа `chmod`
@@ -118,7 +119,7 @@ Mandatory Access Control (MAC) — система мандатного упра�
 - SELinux (RHEL, AlmaLinux, Oracle, Amazon Linux)
 - AppArmor (Ubuntu, SLES, Debian)
 - другие (Astra Linux Special Edition, МСВС, и др.)
-
+-->
 ## Команды su и sudo
 
 `su` — войти в систему от имени другого пользователя.
